@@ -1,5 +1,7 @@
 # GitHub publication readiness
 
+> Historical private-source report, sanitized for public redistribution. Private revision references are redacted. For current public results and MIT confirmation, see [publication status](../../publication/PUBLICATION.md).
+
 No remote repository exists in the inspected configuration. No push, release,
 repository creation, secret upload or remote workflow execution was performed.
 

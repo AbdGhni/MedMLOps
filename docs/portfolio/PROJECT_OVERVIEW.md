@@ -1,4 +1,4 @@
-# MedMLOps — project overview
+# MedMLOps â€” project overview
 
 MedMLOps demonstrates how an ML engineer can turn an experiment into a traceable,
 operable local service. The scenario is prediction of an artificial healthcare
@@ -27,7 +27,7 @@ and container recreation with persistent volumes. See the current
 [final report](../validation/phase5/FINAL_REPORT.md) for checks actually rerun.
 The original [Phase 4 evidence](../validation/phase4/status.md) is preserved.
 
-Suggested recruiter reading: README → [technical deep dive](TECHNICAL_DEEP_DIVE.md)
-→ [demo](DEMO_SCRIPT.md) → [limitations](LIMITATIONS.md). The strongest discussion
+Suggested recruiter reading: README â†’ [technical deep dive](TECHNICAL_DEEP_DIVE.md)
+â†’ [demo](DEMO_SCRIPT.md) â†’ [limitations](LIMITATIONS.md). The strongest discussion
 is about reproducibility, deployment authority and failure recovery, rather than
 claiming a clinically useful classifier or enterprise production readiness.

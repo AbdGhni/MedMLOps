@@ -1,5 +1,7 @@
 # Phase 5 final report
 
+> Historical private-source report, sanitized for public redistribution. Private revision references are redacted. For current public results and MIT confirmation, see [publication status](../../publication/PUBLICATION.md).
+
 Date: 2026-10-15. Release candidate: **2.0.0rc1**, local tag `v2.0.0-rc.1`.
 Functional local acceptance passed. Security release clearance, remote Actions
 execution and authentic rendered screenshots remain incomplete. No push or remote
@@ -23,7 +25,7 @@ repository creation was performed. Synthetic data only; no clinical validation.
 | Prometheus / Grafana | Actual scrape, SyntheticDriftDetected firing, histogram queries, healthy datasource and nine provisioned dashboard panels | `execution/end-to-end.json`; no browser-rendering claim |
 | Fresh local clone | Independent clone, new venv, hash-locked install, project wheel build/install, pip check, 30 tests and pipeline passed; model hashes match host | `clean-clone.json`, `clean-clone-package-install.txt` |
 | Final endpoints | API health, Swagger, MLflow health, Grafana health and Prometheus readiness all returned 200; model info confirmed LR version 10; bearer scheme present | `final-smoke.json` |
-| Secret / history inventory | No known local credential or selected key/token pattern found in scanned current files/reachable history | `release-inventory.json` — scope limits apply |
+| Secret / history inventory | No known local credential or selected key/token pattern found in scanned current files/reachable history | `release-inventory.json` â€” scope limits apply |
 
 The complete scripted functional acceptance ran on clean commit
 `[private-revision]`. Commit
@@ -61,8 +63,8 @@ standard tool-managed caches and temporary files used by authorized tools.
 Both the updated Windows audit and actual Linux API-image audit report **three
 raw findings in two packages, representing two distinct vulnerabilities**:
 
-- DiskCache 5.6.3: PYSEC-2026-2447 / CVE-2025-69872, repeated twice in the raw response. DVC → dvc-data → DiskCache; writable poisoned cache can result in code execution.
-- NLTK 3.10.3: PYSEC-2026-3740 / CVE-2026-81726. Evidently → NLTK; affected model persistence APIs bypass path roots. Those NLP model-path operations are not used by this tabular application.
+- DiskCache 5.6.3: PYSEC-2026-2447 / CVE-2025-69872, repeated twice in the raw response. DVC â†’ dvc-data â†’ DiskCache; writable poisoned cache can result in code execution.
+- NLTK 3.10.3: PYSEC-2026-3740 / CVE-2026-81726. Evidently â†’ NLTK; affected model persistence APIs bypass path roots. Those NLP model-path operations are not used by this tabular application.
 
 Current PyPI metadata and advisory responses supply no compatible fixed version.
 The risk is constrained by local trusted-operator operation, not eliminated.
@@ -86,7 +88,7 @@ Publication needs explicit destination/visibility approval and a push; the audit
 would currently prevent green target CI/CD. See [GitHub checklist](GITHUB_READINESS.md).
 
 **Portfolio:** all seven requested English files are delivered in `docs/portfolio/`,
-including a 5–10 minute script, 30 grounded technical questions and five conservative
+including a 5â€“10 minute script, 30 grounded technical questions and five conservative
 CV bullets. README contains problem, architecture, stack, workflow, quickstart,
 results, testing, monitoring/rollback, security boundaries and roadmap. These are
 usable for an interview with the disclosed limitations.
@@ -124,8 +126,8 @@ $env:MEDMLOPS_EVIDENCE_DIR = 'runtime/demo-evidence'
 .venv/Scripts/python.exe -m medmlops.lifecycle history
 ```
 
-MLflow: http://127.0.0.1:5000 · Swagger: http://127.0.0.1:8000/docs ·
-Grafana: http://127.0.0.1:3000/d/medmlops-v2 · Prometheus: http://127.0.0.1:9090/alerts.
+MLflow: http://127.0.0.1:5000 Â· Swagger: http://127.0.0.1:8000/docs Â·
+Grafana: http://127.0.0.1:3000/d/medmlops-v2 Â· Prometheus: http://127.0.0.1:9090/alerts.
 Grafana uses admin and the generated local `.env` password. Swagger Authorize
 accepts the local API token; keep credentials out of captures. The full scenario
 deliberately injects faults and recreates containers without removing volumes.

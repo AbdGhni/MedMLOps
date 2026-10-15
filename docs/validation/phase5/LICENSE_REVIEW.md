@@ -1,5 +1,7 @@
 # License and dataset inventory
 
+> Historical private-source report, sanitized for public redistribution. Private revision references are redacted. For current public results and MIT confirmation, see [publication status](../../publication/PUBLICATION.md).
+
 The repository already contains an MIT LICENSE in its history. Phase 5 does not
 add, replace or relicense it. Owner confirmation of the existing choice is still
 requested before public release.

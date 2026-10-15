@@ -11,7 +11,7 @@
 | Storage | Named volumes and local DVC remote; recreation verified | Off-host backups and tested restore; local remote is not durable remote storage |
 | Monitoring | Synthetic shifts and reversed labels; last-window drift gauge | Real window scheduling, label-delay handling, incident lifecycle and alert delivery |
 | Supply chain | Hash-locked Python artifacts; action version tags; third-party image tags | Immutable action/image digests, image scanning and platform-specific SBOM/license notices |
-| GitHub | Workflow definitions prepared; remote execution/settings pending | Authorized push, hosted CI execution, branch protection, environment reviewers and isolated runner |
+| GitHub | Public repository verified; core/legacy pass and target functional steps pass, but audit blocks target CI | Resolve advisories; configure branch protection, reviewers and isolated runner before manual CD |
 | Visual proof | No authorized browser surface in Phase 5 | Manual authentic captures using DEMO_SCRIPT checklist; never fabricate panels |
 | Release licensing | MIT file predates Phase 5; owner confirmation pending | Confirm existing license, preserve dependency notices before binary redistribution |
 

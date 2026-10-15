@@ -1,0 +1,28 @@
+{
+  "tracking": {
+    "model_name": "synthetic-event-v2",
+    "selected": "logistic",
+    "versions": {
+      "forest": {
+        "version": "1",
+        "run_id": "4bca81ee88e04e748e55b1890f5871e8",
+        "model_sha256": "c52eeb7aaaaa8c5024a333ec1ca0e8b27c1ca858900eb8c016534c4009541943"
+      },
+      "logistic": {
+        "version": "2",
+        "run_id": "134644a455e1424e9eea334c50053de3",
+        "model_sha256": "fd22fd94e0ceafaa471b1755c8916cad56ae3e7944481adc72b2360df3a4430c"
+      }
+    }
+  },
+  "approval": {
+    "version": "2",
+    "model_sha256": "fd22fd94e0ceafaa471b1755c8916cad56ae3e7944481adc72b2360df3a4430c"
+  },
+  "missing_actor_rejected": true,
+  "artifact_integrity": true,
+  "postgres_audit": true,
+  "pyfunc_numeric_parity": true,
+  "dvc_model_hash_consistency": false,
+  "promotion_performed": false
+}

@@ -8,4 +8,5 @@
 
 Use the current final report for the verified test count. Do not add claims about
 patient benefit, production traffic, cloud deployment, compliance certification or
-remotely passing GitHub Actions. These were not demonstrated.
+a completely green target CI. Remote core/legacy checks passed, while target CI
+remains blocked by its dependency audit.

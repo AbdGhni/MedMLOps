@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "first_deploy": {
+    "version": "2",
+    "previous": null,
+    "verified": true
+  },
+  "second_deploy": {
+    "version": "1",
+    "previous": "2",
+    "verified": true
+  },
+  "bad_candidate_rejected": "3",
+  "http_parity_error": 0.0,
+  "stable_alerts": [],
+  "shifted_alerts": [
+    {
+      "type": "data_drift",
+      "feature": "heart_rate"
+    },
+    {
+      "type": "data_drift",
+      "feature": "oxygen_saturation"
+    },
+    {
+      "type": "prediction_drift"
+    }
+  ],
+  "degraded_alerts": [
+    {
+      "type": "performance_degradation",
+      "note": "Observed AUC decrease; operator investigation required"
+    }
+  ],
+  "prometheus_scrape": true,
+  "firing_alerts": [
+    {
+      "labels": {
+        "alertname": "SyntheticDriftDetected",
+        "instance": "api:8000",
+        "job": "medmlops",
+        "severity": "warning"
+      },
+      "annotations": {
+        "summary": "Synthetic window drift; investigate without automatic promotion"
+      },
+      "state": "firing",
+      "activeAt": "2026-10-15T13:27:12.187831607Z",
+      "value": "3e+00"
+    }
+  ],
+  "latency_quantiles": {
+    "0.5": [
+      {
+        "metric": {},
+        "value": [
+          1792070833.781,
+          "0.019375000000000003"
+        ]
+      }
+    ],
+    "0.95": [
+      {
+        "metric": {},
+        "value": [
+          1792070833.804,
+          "0.3374999999999999"
+        ]
+      }
+    ],
+    "0.99": [
+      {
+        "metric": {},
+        "value": [
+          1792070833.828,
+          "0.4674999999999998"
+        ]
+      }
+    ]
+  },
+  "grafana_datasource": {
+    "details": {
+      "application": "Prometheus",
+      "features": {
+        "rulerApiEnabled": false
+      }
+    },
+    "message": "Successfully queried the Prometheus API.",
+    "status": "OK"
+  },
+  "dashboard_panels": 9,
+  "rollback": {
+    "version": "2",
+    "previous": "1",
+    "verified": true
+  },
+  "compensation": true,
+  "concurrent_audit": true,
+  "append_only_audit": true,
+  "recreated_container_persistence": true,
+  "serving_role_cannot_deploy": true,
+  "stale_switch_rejected": true,
+  "tracking_outage_blocks_publication": true,
+  "corruption_blocks_http_readiness": true,
+  "mlflow_run_and_artifact_persistence": true,
+  "audit_events": 44,
+  "reports": [
+    {
+      "executed": true,
+      "html": "runtime/phase4/reports/dec1ea9419b54020a3437645f3549f9e/evidently.html",
+      "json": "runtime/phase4/reports/dec1ea9419b54020a3437645f3549f9e/evidently.json"
+    },
+    {
+      "executed": true,
+      "html": "runtime/phase4/reports/8af230bb421a46c2a723650060cc01d3/evidently.html",
+      "json": "runtime/phase4/reports/8af230bb421a46c2a723650060cc01d3/evidently.json"
+    },
+    {
+      "executed": true,
+      "html": "runtime/phase4/reports/ad5bd66bb19c462a919e2d861e87c6ae/evidently.html",
+      "json": "runtime/phase4/reports/ad5bd66bb19c462a919e2d861e87c6ae/evidently.json"
+    }
+  ],
+  "clinical_validity": false
+}

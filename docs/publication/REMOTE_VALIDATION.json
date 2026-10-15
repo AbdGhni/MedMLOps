@@ -1,0 +1,51 @@
+{
+  "repository": "https://github.com/AbdGhni/MedMLOps",
+  "visibility": "public",
+  "license": "MIT",
+  "verified_main_commit": "901044207050f36a84d7ca62b0f46d597a7d9a38",
+  "public_rc_tag": "v2.0.0-rc.1",
+  "public_rc_commit": "1bbdc3112f462fa9182d0f39c51a527e823845ef",
+  "workflows": [
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-15T13:22:10Z",
+      "databaseId": 38742095934,
+      "event": "push",
+      "headBranch": "main",
+      "headSha": "901044207050f36a84d7ca62b0f46d597a7d9a38",
+      "status": "completed",
+      "url": "https://github.com/AbdGhni/MedMLOps/actions/runs/38742095934",
+      "workflowName": "legacy-v1-reference"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-15T13:22:10Z",
+      "databaseId": 38742095904,
+      "event": "push",
+      "headBranch": "main",
+      "headSha": "901044207050f36a84d7ca62b0f46d597a7d9a38",
+      "status": "completed",
+      "url": "https://github.com/AbdGhni/MedMLOps/actions/runs/38742095904",
+      "workflowName": "v2-core-verification"
+    },
+    {
+      "conclusion": "failure",
+      "createdAt": "2026-10-15T13:22:10Z",
+      "databaseId": 38742095841,
+      "event": "push",
+      "headBranch": "main",
+      "headSha": "901044207050f36a84d7ca62b0f46d597a7d9a38",
+      "status": "completed",
+      "url": "https://github.com/AbdGhni/MedMLOps/actions/runs/38742095841",
+      "workflowName": "target-platform-ci"
+    }
+  ],
+  "target_failed_step": "Security gate (no ignored advisory IDs)",
+  "all_functional_target_steps_passed": true,
+  "remote_history_privacy_audit_passed": true,
+  "original_repository_unchanged": true,
+  "manual_training_or_deployment_triggered": false,
+  "browser_captures": "Unavailable: no authorized browser/app surface; manual checklist provided.",
+  "production_cleared": false,
+  "clinically_validated": false
+}

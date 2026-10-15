@@ -4,7 +4,7 @@
 [![Core verification](https://github.com/AbdGhni/MedMLOps/actions/workflows/core-ci.yml/badge.svg?branch=main)](https://github.com/AbdGhni/MedMLOps/actions/workflows/core-ci.yml)
 [![Legacy reference](https://github.com/AbdGhni/MedMLOps/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/AbdGhni/MedMLOps/actions/workflows/ci.yml)
 
-**Synthetic data only Â· Not clinically validated Â· Not production-cleared.**
+**Synthetic data only Ã‚Â· Not clinically validated Ã‚Â· Not production-cleared.**
 
 This is an independently initialized, privacy-sanitized public source snapshot.
 Historical local evidence is retained with personal paths and private revision
@@ -58,7 +58,7 @@ The v1 reference and v2 mathematical core remain tested.
 | Prometheus/Grafana | Actual scrape, firing rule, latency quantiles, datasource health and provisioned dashboard API |
 | Rollback and restart | Actual served version restored; failure compensation; durable runs/artifacts/audit |
 | Local quality checks | Regression/API suite plus live integration; Ruff and scoped Mypy; latest results in Phase 5 report |
-| GitHub Actions | CI/manual CT/controlled CD prepared; remote execution and publication pending |
+| GitHub Actions | Core and legacy pass; target functional checks pass but dependency audit blocks the workflow; manual CT/CD not triggered |
 
 Known release limits: the audit still reports unpatched transitive DiskCache/NLTK
 advisories, so the security gate is not green. Browser automation was unavailable
@@ -131,8 +131,8 @@ schema checks gate loading. Both algorithms use non-executable numeric JSON;
 the MLflow pyfunc flavor uses the trusted installed loader, without model pickle.
 The API's PostgreSQL role cannot deploy or rewrite audit history.
 
-The simulated quality thresholds are AUC Ã¢â€°Â¥ .78, sensitivity Ã¢â€°Â¥ .75, specificity
-Ã¢â€°Â¥ .40, Brier Ã¢â€°Â¤ .20 and train/serve error Ã¢â€°Â¤ 1e-12. The 4,000-subject fixture uses
+The simulated quality thresholds are AUC ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¥ .78, sensitivity ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¥ .75, specificity
+ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¥ .40, Brier ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¤ .20 and train/serve error ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¤ 1e-12. The 4,000-subject fixture uses
 disjoint 60/20/20 partitions and train-only cross-validation/scaling. LR is selected
 by validation ROC-AUC; its held-out AUC is .86698 versus RF .83770. These are
 synthetic exercise results, not evidence of medical performance.
@@ -185,7 +185,7 @@ are absent. `compose.yaml` and the Dockerfile now deploy the target stack.
 - [Data contract](docs/data-contract-v2.md), [regulatory boundary](docs/validation/regulatory-boundary.md)
 - [Portfolio description](docs/portfolio-draft.md), [backlog](docs/Tickets.md), [progress](docs/Progress.md)
 - [Recruiter overview](docs/portfolio/PROJECT_OVERVIEW.md), [technical deep dive](docs/portfolio/TECHNICAL_DEEP_DIVE.md), [architecture decisions](docs/portfolio/ARCHITECTURE_DECISIONS.md)
-- [5Ã¢â‚¬â€œ10 minute demo](docs/portfolio/DEMO_SCRIPT.md), [30 interview questions](docs/portfolio/INTERVIEW_QA.md), [CV bullets](docs/portfolio/CV_BULLETS.md), [limitations](docs/portfolio/LIMITATIONS.md)
+- [5ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“10 minute demo](docs/portfolio/DEMO_SCRIPT.md), [30 interview questions](docs/portfolio/INTERVIEW_QA.md), [CV bullets](docs/portfolio/CV_BULLETS.md), [limitations](docs/portfolio/LIMITATIONS.md)
 - [Release candidate](docs/validation/phase5/RELEASE_CANDIDATE.md), [license inventory](docs/validation/phase5/LICENSE_REVIEW.md), [GitHub setup](docs/validation/phase5/GITHUB_READINESS.md)
 
 ## Roadmap
@@ -196,7 +196,9 @@ off-host backup restores and capture authentic interfaces. A real medical produc
 would additionally require independently governed clinical validation and a
 regulatory program outside this synthetic demonstration.
 
-GitHub workflows have not run remotely, and no commits have been pushed. Manual
-CD requires configured reviewers and a local self-hosted runner. Cloud, enterprise
+GitHub core and legacy workflows have passed remotely. The target workflow
+passes functional integration checks and fails its blocking DiskCache/NLTK audit.
+See [actual run evidence](docs/publication/PUBLICATION.md). Manual CD has not been
+triggered and requires configured reviewers and an isolated trusted runner. Cloud, enterprise
 IAM, HA, real patient data and clinical deployment are outside this demo. The MIT
 license file predates Phase 5, is preserved unchanged and is confirmed by the owner.

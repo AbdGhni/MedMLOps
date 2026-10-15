@@ -1,5 +1,7 @@
 # MedMLOps 2.0.0rc1
 
+> Historical private-source report, sanitized for public redistribution. Private revision references are redacted. For current public results and MIT confirmation, see [publication status](../../publication/PUBLICATION.md).
+
 Local release candidate only. Distribution version: `2.0.0rc1`; intended Git tag:
 `v2.0.0-rc.1`. No remote repository, push, GitHub release or remote run is authorized.
 The local tag is created only after verification; see FINAL_REPORT for actual state.
