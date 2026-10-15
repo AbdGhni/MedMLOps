@@ -1,0 +1,28 @@
+test_authentication_and_input_privacy (test_platform.PlatformTests.test_authentication_and_input_privacy) ... ok
+test_batch_command_and_overwrite_protection (test_platform.PlatformTests.test_batch_command_and_overwrite_protection) ... MedMLOps: [Errno 17] File exists: 'C:/home/USER
+ok
+test_concurrent_audit_and_registry (test_platform.PlatformTests.test_concurrent_audit_and_registry) ... ok
+test_corruption_blocks_readiness_and_inference (test_platform.PlatformTests.test_corruption_blocks_readiness_and_inference) ... ok
+test_determinism_and_disjoint_splits (test_platform.PlatformTests.test_determinism_and_disjoint_splits) ... ok
+test_empty_registry_and_no_secret_defaults (test_platform.PlatformTests.test_empty_registry_and_no_secret_defaults) ... ok
+test_feature_contract_adversarial (test_platform.PlatformTests.test_feature_contract_adversarial) ... ok
+test_gate_rejects_bad_model (test_platform.PlatformTests.test_gate_rejects_bad_model) ... ok
+test_malformed_large_body_and_web_dashboard (test_platform.PlatformTests.test_malformed_large_body_and_web_dashboard) ... ok
+test_monitor_detects_shift_without_false_alert_on_reference (test_platform.PlatformTests.test_monitor_detects_shift_without_false_alert_on_reference) ... ok
+test_prediction_parity_audit_and_health (test_platform.PlatformTests.test_prediction_parity_audit_and_health) ... ok
+test_promotion_rollback_and_missing_version (test_platform.PlatformTests.test_promotion_rollback_and_missing_version) ... ok
+test_quality_failures (test_v2.DataTests.test_quality_failures) ... ok
+test_synthetic_reproducibility_and_contract (test_v2.DataTests.test_synthetic_reproducibility_and_contract) ... ok
+test_candidate_metrics_recomputed_from_real_artifacts (test_v2.ExperimentTests.test_candidate_metrics_recomputed_from_real_artifacts) ... ok
+test_candidate_rejects_tampered_metrics_and_missing_actor (test_v2.ExperimentTests.test_candidate_rejects_tampered_metrics_and_missing_actor) ... ok
+test_candidate_rejects_unsafe_numeric_artifacts (test_v2.ExperimentTests.test_candidate_rejects_unsafe_numeric_artifacts) ... ok
+test_disjoint_subject_partitions (test_v2.ExperimentTests.test_disjoint_subject_partitions) ... ok
+test_monitoring_types_labels_and_small_windows (test_v2.ExperimentTests.test_monitoring_types_labels_and_small_windows) ... ok
+test_selection_uses_validation_and_gate_rejects_regression (test_v2.ExperimentTests.test_selection_uses_validation_and_gate_rejects_regression) ... ok
+test_two_models_cv_calibration_metrics_and_parity (test_v2.ExperimentTests.test_two_models_cv_calibration_metrics_and_parity) ... ok
+test_version_and_integrity (test_v2.ExperimentTests.test_version_and_integrity) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 4.383s
+
+OK

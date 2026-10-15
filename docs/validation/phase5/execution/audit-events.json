@@ -1,0 +1,1469 @@
+[
+  {
+    "id": 1,
+    "actor": "local-demo-operator",
+    "action": "approved",
+    "version": "4",
+    "correlation": "c2710a6dd8fd45458cb79e36d046f072",
+    "details": {
+      "dataset_integrity": true,
+      "artifact_structure": true,
+      "clean_training_commit": true,
+      "metrics_recomputed_match": true,
+      "confusion_recomputed_match": true
+    }
+  },
+  {
+    "id": 2,
+    "actor": "local-demo-operator",
+    "action": "approved",
+    "version": "3",
+    "correlation": "a6f5b722eafa4be3b79aadea93cd4bf4",
+    "details": {
+      "dataset_integrity": true,
+      "artifact_structure": true,
+      "clean_training_commit": true,
+      "metrics_recomputed_match": true,
+      "confusion_recomputed_match": true
+    }
+  },
+  {
+    "id": 3,
+    "actor": "local-demo-operator",
+    "action": "deploy",
+    "version": "4",
+    "correlation": "8e8071fd813a4750b8b3e30a77bd7fa0",
+    "details": {
+      "previous": null
+    }
+  },
+  {
+    "id": 4,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "4",
+    "correlation": "9134cb7fc06e45589dadafb963126f9f",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 5,
+    "actor": "local-demo-operator",
+    "action": "deployment_verified",
+    "version": "4",
+    "correlation": "a1e78adc45514233891b1ebc9a28ebb2",
+    "details": {}
+  },
+  {
+    "id": 6,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "4",
+    "correlation": "795d928f202d4f73b4f23c84ba1d194b",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 7,
+    "actor": "local-demo-operator",
+    "action": "approval_rejected",
+    "version": "5",
+    "correlation": "60d851a4d0f243cdb4bbd7908f33d197",
+    "details": {
+      "quality_passed": false
+    }
+  },
+  {
+    "id": 8,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "9e9f05dc9e5b4050ba3fb46ee450cfa8",
+    "details": {
+      "index": 1
+    }
+  },
+  {
+    "id": 9,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "dd8997b95cf04441955d44fa25102110",
+    "details": {
+      "index": 0
+    }
+  },
+  {
+    "id": 10,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "4b8e823c8a0645bdbf4221686abf2214",
+    "details": {
+      "index": 3
+    }
+  },
+  {
+    "id": 11,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "8a238d01a1bd4845b568d85f4e5bc5f2",
+    "details": {
+      "index": 2
+    }
+  },
+  {
+    "id": 12,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "667c3045d58f49c2a3a5603182b02f76",
+    "details": {
+      "index": 4
+    }
+  },
+  {
+    "id": 13,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "13ed420be1bf448494055ff681644afe",
+    "details": {
+      "index": 5
+    }
+  },
+  {
+    "id": 14,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "9b8b4f5dede14403853336bbe2b04df1",
+    "details": {
+      "index": 7
+    }
+  },
+  {
+    "id": 15,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "edd7da668fb04093a08087ea8a33537e",
+    "details": {
+      "index": 6
+    }
+  },
+  {
+    "id": 16,
+    "actor": "local-demo-operator",
+    "action": "deploy",
+    "version": "3",
+    "correlation": "8335bfc467f44509b9489b3794a93709",
+    "details": {
+      "previous": "4"
+    }
+  },
+  {
+    "id": 17,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "39162843eb9b4fd0bb6bef5ac82c9e31",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 18,
+    "actor": "local-demo-operator",
+    "action": "deployment_verified",
+    "version": "3",
+    "correlation": "681a6a124d09449cb1c075c6fd63a416",
+    "details": {}
+  },
+  {
+    "id": 19,
+    "actor": "local-demo-operator",
+    "action": "monitoring",
+    "version": "3",
+    "correlation": "5be37a85a1b9406c9aca80da26e6f850",
+    "details": {
+      "alerts": [],
+      "report": "6a2f90238b6a4b3ba2c0d0cd7799845f",
+      "status": "evaluated",
+      "alert_count": 0
+    }
+  },
+  {
+    "id": 20,
+    "actor": "local-demo-operator",
+    "action": "monitoring",
+    "version": "3",
+    "correlation": "6165ae4fe71a45d1895977891cae9ce6",
+    "details": {
+      "alerts": [
+        {
+          "type": "data_drift",
+          "feature": "heart_rate"
+        },
+        {
+          "type": "data_drift",
+          "feature": "oxygen_saturation"
+        },
+        {
+          "type": "prediction_drift"
+        }
+      ],
+      "report": "c3338ee40ca147fe9507c143a7ec787e",
+      "status": "evaluated",
+      "alert_count": 3
+    }
+  },
+  {
+    "id": 21,
+    "actor": "local-demo-operator",
+    "action": "drift_incident",
+    "version": "3",
+    "correlation": "095906755f7d492f9f7d84e7fa7757fb",
+    "details": {
+      "alerts": [
+        {
+          "type": "data_drift",
+          "feature": "heart_rate"
+        },
+        {
+          "type": "data_drift",
+          "feature": "oxygen_saturation"
+        },
+        {
+          "type": "prediction_drift"
+        }
+      ],
+      "report": "c3338ee40ca147fe9507c143a7ec787e",
+      "status": "evaluated",
+      "alert_count": 3
+    }
+  },
+  {
+    "id": 22,
+    "actor": "local-demo-operator",
+    "action": "monitoring",
+    "version": "3",
+    "correlation": "82c0c6a189754067965746b5cacaa173",
+    "details": {
+      "alerts": [
+        {
+          "note": "Observed AUC decrease; operator investigation required",
+          "type": "performance_degradation"
+        }
+      ],
+      "report": "c975b80d4ffb463ca8268c347b094d12",
+      "status": "evaluated",
+      "alert_count": 1
+    }
+  },
+  {
+    "id": 23,
+    "actor": "local-demo-operator",
+    "action": "drift_incident",
+    "version": "3",
+    "correlation": "13b140b34b18430daf144cc656ee8831",
+    "details": {
+      "alerts": [
+        {
+          "note": "Observed AUC decrease; operator investigation required",
+          "type": "performance_degradation"
+        }
+      ],
+      "report": "c975b80d4ffb463ca8268c347b094d12",
+      "status": "evaluated",
+      "alert_count": 1
+    }
+  },
+  {
+    "id": 24,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "123af4753de74161a846c6253f1c5515",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 25,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "dd4f715bd16540d29489c797605d3351",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 26,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "cd19d445e1984d81bfda33962ca038a2",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 27,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "a9e3479dab2642cfaff3e7282eae2907",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 28,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "2cac0b30f2d2409f9b056b57fc63b956",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 29,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "e35c37a8b09141b0a326b4629973b922",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 30,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "c47728bbcae54807bea21d271fe32698",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 31,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "c1e0615dd56c460cb1786caf751e9357",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 32,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "d290e14bce74495a91f506b22bd2bb40",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 33,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "ab39c95362cb4c9199913ae21d5b55f2",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 34,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "8b0a52b37dc44f5a9b020ed74dd23893",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 35,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "c185a222de194609a8b4a32a2fc1ca43",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 36,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "eff7a807530742f29416ab378f294bfb",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 37,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "f9d6eacad05444c3bb27e224ffe10400",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 38,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "3",
+    "correlation": "9224ec57c3a5432cb3cb2dca525e8053",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 39,
+    "actor": "local-demo-operator",
+    "action": "rollback",
+    "version": "4",
+    "correlation": "dd5490dd505544feb747839b28d80ed4",
+    "details": {
+      "previous": "3"
+    }
+  },
+  {
+    "id": 40,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "4",
+    "correlation": "3b3f9cefdca84754a1457a6af82ecd5f",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 41,
+    "actor": "local-demo-operator",
+    "action": "deployment_verified",
+    "version": "4",
+    "correlation": "569c3e8bdab945e6a0a9584634ed6dad",
+    "details": {}
+  },
+  {
+    "id": 42,
+    "actor": "local-demo-operator",
+    "action": "deploy",
+    "version": "3",
+    "correlation": "2b28a04276a049d19ba639a239522fe8",
+    "details": {
+      "previous": "4"
+    }
+  },
+  {
+    "id": 43,
+    "actor": "local-demo-operator",
+    "action": "compensation",
+    "version": "4",
+    "correlation": "807a3e943d5b462a87a669e6c28edf44",
+    "details": {
+      "previous": "3"
+    }
+  },
+  {
+    "id": 44,
+    "actor": "local-demo-operator",
+    "action": "deployment_incident",
+    "version": "3",
+    "correlation": "bfc6ca3deab04932899d398a680cd2e7",
+    "details": {}
+  },
+  {
+    "id": 45,
+    "actor": "local-demo-operator",
+    "action": "approved",
+    "version": "7",
+    "correlation": "448e27d8b9cf4664a0dc1e03e394a998",
+    "details": {
+      "dataset_integrity": true,
+      "artifact_structure": true,
+      "clean_training_commit": true,
+      "metrics_recomputed_match": true,
+      "confusion_recomputed_match": true
+    }
+  },
+  {
+    "id": 46,
+    "actor": "local-demo-operator",
+    "action": "approved",
+    "version": "6",
+    "correlation": "5f808fc8a6f4441dba1d2bddd90018bb",
+    "details": {
+      "dataset_integrity": true,
+      "artifact_structure": true,
+      "clean_training_commit": true,
+      "metrics_recomputed_match": true,
+      "confusion_recomputed_match": true
+    }
+  },
+  {
+    "id": 47,
+    "actor": "local-demo-operator",
+    "action": "deploy",
+    "version": "7",
+    "correlation": "032ad8b262f14512ae2bfe90c11746c4",
+    "details": {
+      "previous": "4"
+    }
+  },
+  {
+    "id": 48,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "7",
+    "correlation": "a78327c343c7435e84cf98fd6b082dac",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 49,
+    "actor": "local-demo-operator",
+    "action": "deployment_verified",
+    "version": "7",
+    "correlation": "fcb3b136fd6d415081d1c237d89ea205",
+    "details": {}
+  },
+  {
+    "id": 50,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "7",
+    "correlation": "5be247c3ca014fb7b0d9338fced658a7",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 51,
+    "actor": "local-demo-operator",
+    "action": "approval_rejected",
+    "version": "8",
+    "correlation": "fc73de109adc40e294a0c4a29ee903af",
+    "details": {
+      "quality_passed": false
+    }
+  },
+  {
+    "id": 52,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "b6eb4cc2948d402187100463ea803662",
+    "details": {
+      "index": 2
+    }
+  },
+  {
+    "id": 53,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "52f3a7cffcdd4617b1cc905657df1b30",
+    "details": {
+      "index": 0
+    }
+  },
+  {
+    "id": 54,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "7cc9bc0a0ff946f2a8d9eb12735cef5a",
+    "details": {
+      "index": 1
+    }
+  },
+  {
+    "id": 55,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "a78a6b9e7c1f443a83f9f1b5c996641b",
+    "details": {
+      "index": 3
+    }
+  },
+  {
+    "id": 56,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "9997315a7d564d539966273735fef365",
+    "details": {
+      "index": 4
+    }
+  },
+  {
+    "id": 57,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "36ae7b084de64f4db8ee0e67a7e6592f",
+    "details": {
+      "index": 6
+    }
+  },
+  {
+    "id": 58,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "b3017371c2a04cf981de29f097b4ec98",
+    "details": {
+      "index": 7
+    }
+  },
+  {
+    "id": 59,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "68aa48a95b4d4b88a68737819fb35572",
+    "details": {
+      "index": 5
+    }
+  },
+  {
+    "id": 60,
+    "actor": "local-demo-operator",
+    "action": "deploy",
+    "version": "6",
+    "correlation": "db59dbd156234995a9582253166b49d7",
+    "details": {
+      "previous": "7"
+    }
+  },
+  {
+    "id": 61,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "154a88a788074315a6fb51f78ee96745",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 62,
+    "actor": "local-demo-operator",
+    "action": "deployment_verified",
+    "version": "6",
+    "correlation": "0e11fbff441645f7b7f77fbbe42f0efe",
+    "details": {}
+  },
+  {
+    "id": 63,
+    "actor": "local-demo-operator",
+    "action": "monitoring",
+    "version": "6",
+    "correlation": "b5f59ac2df6042b1b2fa879760c50c60",
+    "details": {
+      "alerts": [],
+      "report": "feae5e61740d4d45b5ddef2819b9f6f1",
+      "status": "evaluated",
+      "alert_count": 0
+    }
+  },
+  {
+    "id": 64,
+    "actor": "local-demo-operator",
+    "action": "monitoring",
+    "version": "6",
+    "correlation": "47cefd2fcbe74c7ca4d5808deb9ce55d",
+    "details": {
+      "alerts": [
+        {
+          "type": "data_drift",
+          "feature": "heart_rate"
+        },
+        {
+          "type": "data_drift",
+          "feature": "oxygen_saturation"
+        },
+        {
+          "type": "prediction_drift"
+        }
+      ],
+      "report": "f0d1c6e77f044679a44256887925cb9e",
+      "status": "evaluated",
+      "alert_count": 3
+    }
+  },
+  {
+    "id": 65,
+    "actor": "local-demo-operator",
+    "action": "drift_incident",
+    "version": "6",
+    "correlation": "dc44a836ebe84145a25e2bf1163be993",
+    "details": {
+      "alerts": [
+        {
+          "type": "data_drift",
+          "feature": "heart_rate"
+        },
+        {
+          "type": "data_drift",
+          "feature": "oxygen_saturation"
+        },
+        {
+          "type": "prediction_drift"
+        }
+      ],
+      "report": "f0d1c6e77f044679a44256887925cb9e",
+      "status": "evaluated",
+      "alert_count": 3
+    }
+  },
+  {
+    "id": 66,
+    "actor": "local-demo-operator",
+    "action": "monitoring",
+    "version": "6",
+    "correlation": "632ff2c944ae410798d88a368c7de927",
+    "details": {
+      "alerts": [
+        {
+          "note": "Observed AUC decrease; operator investigation required",
+          "type": "performance_degradation"
+        }
+      ],
+      "report": "92ad4ee004244ae59316852bb3db9d46",
+      "status": "evaluated",
+      "alert_count": 1
+    }
+  },
+  {
+    "id": 67,
+    "actor": "local-demo-operator",
+    "action": "drift_incident",
+    "version": "6",
+    "correlation": "c39a5144dbe642e08efafad59b12245f",
+    "details": {
+      "alerts": [
+        {
+          "note": "Observed AUC decrease; operator investigation required",
+          "type": "performance_degradation"
+        }
+      ],
+      "report": "92ad4ee004244ae59316852bb3db9d46",
+      "status": "evaluated",
+      "alert_count": 1
+    }
+  },
+  {
+    "id": 68,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "022852d9b5004ceda807e6480e9e4490",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 69,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "c911c6ee1d854a468bfdde4090c6904a",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 70,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "6858c0028b874127b72e6359438c2fb7",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 71,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "ead84b751fbd404eadf3dc81f0a51cf3",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 72,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "94f34c63d5a74052b6ea55bd25e63ec5",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 73,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "3db98f855ea6469fb13820adaed88afa",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 74,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "5fc7ce9bd9804040ae05548498e5f5ba",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 75,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "203dae3e55024e60bdb1b28fa368bc79",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 76,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "2cb22b04346140e5bc8f83a17e44426e",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 77,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "2faeed92078243f4982615e4ea334eda",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 78,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "c8f6e5676e50466cbf09814e2e183d7e",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 79,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "eef2ae7a4a4142659685f862debb013a",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 80,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "e034bbb621024af1b13ba1df789aabe8",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 81,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "651f38e5d5cb4c11b33754c54ae1f205",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 82,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "6",
+    "correlation": "4d4d80576cd3477f8bc2c9cf88a67746",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 83,
+    "actor": "local-demo-operator",
+    "action": "rollback",
+    "version": "7",
+    "correlation": "0cbb9c13e5254600b73da104d195ead3",
+    "details": {
+      "previous": "6"
+    }
+  },
+  {
+    "id": 84,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "7",
+    "correlation": "9a4e8d1749124db086d0fd43f43c2c9a",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 85,
+    "actor": "local-demo-operator",
+    "action": "deployment_verified",
+    "version": "7",
+    "correlation": "e78c6fdba750441fa54003b66c5917a2",
+    "details": {}
+  },
+  {
+    "id": 86,
+    "actor": "local-demo-operator",
+    "action": "deploy",
+    "version": "6",
+    "correlation": "7ec5069999724dc783536d9e0599cb13",
+    "details": {
+      "previous": "7"
+    }
+  },
+  {
+    "id": 87,
+    "actor": "local-demo-operator",
+    "action": "compensation",
+    "version": "7",
+    "correlation": "93f41048a96b431f9c52d18634e1f0b5",
+    "details": {
+      "previous": "6"
+    }
+  },
+  {
+    "id": 88,
+    "actor": "local-demo-operator",
+    "action": "deployment_incident",
+    "version": "6",
+    "correlation": "2a4b6192c9634fd7a04539a07fa8e72f",
+    "details": {}
+  },
+  {
+    "id": 89,
+    "actor": "local-demo-operator",
+    "action": "approved",
+    "version": "10",
+    "correlation": "907179d48c1947e9a201e7ec283f8af3",
+    "details": {
+      "dataset_integrity": true,
+      "artifact_structure": true,
+      "clean_training_commit": true,
+      "metrics_recomputed_match": true,
+      "confusion_recomputed_match": true
+    }
+  },
+  {
+    "id": 90,
+    "actor": "local-demo-operator",
+    "action": "approved",
+    "version": "9",
+    "correlation": "4c67c7cbe16d418ab8a54ef01d37e8d4",
+    "details": {
+      "dataset_integrity": true,
+      "artifact_structure": true,
+      "clean_training_commit": true,
+      "metrics_recomputed_match": true,
+      "confusion_recomputed_match": true
+    }
+  },
+  {
+    "id": 91,
+    "actor": "local-demo-operator",
+    "action": "deploy",
+    "version": "10",
+    "correlation": "977d42c92e134b3ebbc0408b3aee0936",
+    "details": {
+      "previous": "7"
+    }
+  },
+  {
+    "id": 92,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "10",
+    "correlation": "8e50f76dae844cbaa60f9a8d9be8753f",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 93,
+    "actor": "local-demo-operator",
+    "action": "deployment_verified",
+    "version": "10",
+    "correlation": "89a63384d41c46b3bf1f594417aefe55",
+    "details": {}
+  },
+  {
+    "id": 94,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "10",
+    "correlation": "15001e72c67a4401be8e762009d51c90",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 95,
+    "actor": "local-demo-operator",
+    "action": "approval_rejected",
+    "version": "11",
+    "correlation": "b1f6d18955674c02a5c97c4c49a948f1",
+    "details": {
+      "quality_passed": false
+    }
+  },
+  {
+    "id": 96,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "88b00c516c314d5fa797ea25f253e3b7",
+    "details": {
+      "index": 0
+    }
+  },
+  {
+    "id": 97,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "7ae771ae141a41f78f4bc6b0f08b1fba",
+    "details": {
+      "index": 1
+    }
+  },
+  {
+    "id": 98,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "55d24af8849b43ddb3e0d3f7b3afecb5",
+    "details": {
+      "index": 2
+    }
+  },
+  {
+    "id": 99,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "71d7c8e5471a4de09719a106fb1203e3",
+    "details": {
+      "index": 3
+    }
+  },
+  {
+    "id": 100,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "ed8889d605184dd2a65b9406783be3ec",
+    "details": {
+      "index": 6
+    }
+  },
+  {
+    "id": 101,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "ce1214c05a664c219f4e62b4b844b3f7",
+    "details": {
+      "index": 4
+    }
+  },
+  {
+    "id": 102,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "695c242c53eb4a379b262044905ae586",
+    "details": {
+      "index": 7
+    }
+  },
+  {
+    "id": 103,
+    "actor": "local-demo-operator",
+    "action": "concurrency_probe",
+    "version": null,
+    "correlation": "c0ba04591bb34849bd0ccf011222a116",
+    "details": {
+      "index": 5
+    }
+  },
+  {
+    "id": 104,
+    "actor": "local-demo-operator",
+    "action": "deploy",
+    "version": "9",
+    "correlation": "c98ace5c60ad4e028a1062545a1d6f61",
+    "details": {
+      "previous": "10"
+    }
+  },
+  {
+    "id": 105,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "011ab0d7ec7045d1bfdd6c4e83a57baf",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 106,
+    "actor": "local-demo-operator",
+    "action": "deployment_verified",
+    "version": "9",
+    "correlation": "2bb524de22454af19da2da8e08b9a7fa",
+    "details": {}
+  },
+  {
+    "id": 107,
+    "actor": "local-demo-operator",
+    "action": "monitoring",
+    "version": "9",
+    "correlation": "0ad349ed9dc24aafbf9cac02fe2f3161",
+    "details": {
+      "alerts": [],
+      "report": "18fe7b127d9044dab4e0ffda2e1f1b53",
+      "status": "evaluated",
+      "alert_count": 0
+    }
+  },
+  {
+    "id": 108,
+    "actor": "local-demo-operator",
+    "action": "monitoring",
+    "version": "9",
+    "correlation": "8349033089c44fc9913c5f3c9d374a56",
+    "details": {
+      "alerts": [
+        {
+          "type": "data_drift",
+          "feature": "heart_rate"
+        },
+        {
+          "type": "data_drift",
+          "feature": "oxygen_saturation"
+        },
+        {
+          "type": "prediction_drift"
+        }
+      ],
+      "report": "4acec399b5c040c79f976859c7d47cdd",
+      "status": "evaluated",
+      "alert_count": 3
+    }
+  },
+  {
+    "id": 109,
+    "actor": "local-demo-operator",
+    "action": "drift_incident",
+    "version": "9",
+    "correlation": "0d4c0cd1fa4743829012bd8776a373ba",
+    "details": {
+      "alerts": [
+        {
+          "type": "data_drift",
+          "feature": "heart_rate"
+        },
+        {
+          "type": "data_drift",
+          "feature": "oxygen_saturation"
+        },
+        {
+          "type": "prediction_drift"
+        }
+      ],
+      "report": "4acec399b5c040c79f976859c7d47cdd",
+      "status": "evaluated",
+      "alert_count": 3
+    }
+  },
+  {
+    "id": 110,
+    "actor": "local-demo-operator",
+    "action": "monitoring",
+    "version": "9",
+    "correlation": "1c421aacb3ec4ed48b6903f2af1f9bbd",
+    "details": {
+      "alerts": [
+        {
+          "note": "Observed AUC decrease; operator investigation required",
+          "type": "performance_degradation"
+        }
+      ],
+      "report": "b716f180fd154c0b8e719ce57d0f927a",
+      "status": "evaluated",
+      "alert_count": 1
+    }
+  },
+  {
+    "id": 111,
+    "actor": "local-demo-operator",
+    "action": "drift_incident",
+    "version": "9",
+    "correlation": "a825a93bf61c4e1d9f77dd4039e3f9a1",
+    "details": {
+      "alerts": [
+        {
+          "note": "Observed AUC decrease; operator investigation required",
+          "type": "performance_degradation"
+        }
+      ],
+      "report": "b716f180fd154c0b8e719ce57d0f927a",
+      "status": "evaluated",
+      "alert_count": 1
+    }
+  },
+  {
+    "id": 112,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "c56984b1c2fa4fd28fd9faef50ca7106",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 113,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "428e2a37bc604d93bb63d9c69bbb8705",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 114,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "e4a0b0e219fc495b816132c9a4160594",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 115,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "6ef7fcfab9654d98a78bd7f417f49ec7",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 116,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "87cfdb8382a24fefb7ba2dc77ba22899",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 117,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "631c620e3cdf43ce8d8c581e05d52dec",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 118,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "6e13f0104bf747b9a69b7e807baa16d6",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 119,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "e4f333b5ca514a63a7dca5521d60a267",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 120,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "01ab21c9cfa14db19eed619fe257a79b",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 121,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "dcac5e945a02418ebbf4146cc4ab3101",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 122,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "0026325296cb443ea48e3dcdf1f0fc15",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 123,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "985f5ccca0ff48d5b5b579b3d4e76a0f",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 124,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "31a3ce7e78944ede8c86664388aded78",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 125,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "a29640471ea34cb8b8a0f7a7e6f7e490",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 126,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "9",
+    "correlation": "80bdfb57283640b5925e7da605d00554",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 127,
+    "actor": "local-demo-operator",
+    "action": "rollback",
+    "version": "10",
+    "correlation": "581d75d812c44cec9c7ab81b9708599d",
+    "details": {
+      "previous": "9"
+    }
+  },
+  {
+    "id": 128,
+    "actor": "api-service",
+    "action": "prediction",
+    "version": "10",
+    "correlation": "cfe05aaba7644f478caab4f2a171fa72",
+    "details": {
+      "count": 1
+    }
+  },
+  {
+    "id": 129,
+    "actor": "local-demo-operator",
+    "action": "deployment_verified",
+    "version": "10",
+    "correlation": "9d069300b83b41d8a8265170f131573e",
+    "details": {}
+  },
+  {
+    "id": 130,
+    "actor": "local-demo-operator",
+    "action": "deploy",
+    "version": "9",
+    "correlation": "235bd629a63f472d84620573ee4441ac",
+    "details": {
+      "previous": "10"
+    }
+  },
+  {
+    "id": 131,
+    "actor": "local-demo-operator",
+    "action": "compensation",
+    "version": "10",
+    "correlation": "e1775395624c4b5cbfdb512fdf006bb5",
+    "details": {
+      "previous": "9"
+    }
+  },
+  {
+    "id": 132,
+    "actor": "local-demo-operator",
+    "action": "deployment_incident",
+    "version": "9",
+    "correlation": "13b4148b38c84d748c70c1cce440993a",
+    "details": {}
+  }
+]

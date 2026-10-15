@@ -1,0 +1,83 @@
+🏃 View run exultant-hog-717 at: http://127.0.0.1:5000/#/experiments/8/runs/b60e672ebf714e2692d959ae69083b5d
+🧪 View experiment at: http://127.0.0.1:5000/#/experiments/8
+🏃 View run bold-roo-526 at: http://127.0.0.1:5000/#/experiments/8/runs/6ccbacb7aea34a9e8f1b4e301b6053e3
+🧪 View experiment at: http://127.0.0.1:5000/#/experiments/8
+{
+  "tracking": {
+    "model_name": "synthetic-event-v2",
+    "selected": "logistic",
+    "versions": {
+      "forest": {
+        "version": "9",
+        "run_id": "b60e672ebf714e2692d959ae69083b5d",
+        "model_sha256": "c52eeb7aaaaa8c5024a333ec1ca0e8b27c1ca858900eb8c016534c4009541943"
+      },
+      "logistic": {
+        "version": "10",
+        "run_id": "6ccbacb7aea34a9e8f1b4e301b6053e3",
+        "model_sha256": "fd22fd94e0ceafaa471b1755c8916cad56ae3e7944481adc72b2360df3a4430c"
+      }
+    }
+  },
+  "approval": {
+    "version": "10",
+    "model_sha256": "fd22fd94e0ceafaa471b1755c8916cad56ae3e7944481adc72b2360df3a4430c"
+  },
+  "missing_actor_rejected": true,
+  "artifact_integrity": true,
+  "postgres_audit": true,
+  "pyfunc_numeric_parity": true,
+  "dvc_model_hash_consistency": true,
+  "promotion_performed": false
+}
+2026/10/15 14:06:48 INFO mlflow.agent.hint: Load the `instrumenting-with-mlflow-tracing` skill at C:/Projects/MedMLOps\.venv\Lib\site-packages\mlflow\assistant\skills\instrumenting-with-mlflow-tracing\SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+2026/10/15 14:06:50 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: synthetic-event-v2, version 9
+2026/10/15 14:06:50 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: synthetic-event-v2, version 10
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 21.29it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 21.04it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 52.03it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 52.03it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 62.03it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 62.03it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 58.19it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 58.19it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 58.56it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 58.56it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 59.80it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 59.80it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 63.37it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 61.13it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 60.61it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 58.73it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 56.34it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 56.34it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 47.00it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 47.00it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 62.85it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 60.75it/s]
+
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 67.20it/s]
+Downloading artifacts: 100%|##########| 1/1 [00:00<00:00, 67.20it/s]

@@ -1,0 +1,143 @@
+docker :  Image medmlops:phase4 Building 
+Au caractère Ligne:2 : 1
++ docker compose up --build -d --wait --wait-timeout 240 > runtime/phas ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( Image medmlops:phase4 Building :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ Image medmlops:phase4 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 958B 0.0s done
+#1 DONE 0.0s
+
+#2 [mlflow internal] load build definition from Dockerfile
+#2 transferring dockerfile: 727B done
+#2 DONE 0.0s
+
+#3 [api internal] load metadata for docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#3 ...
+
+#4 [auth] library/python:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#3 [api internal] load metadata for docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#3 DONE 0.9s
+
+#5 [api internal] load .dockerignore
+#5 transferring context: 113B done
+#5 DONE 0.0s
+
+#6 [mlflow stage-0 1/8] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#6 resolve docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 0.0s done
+#6 DONE 0.1s
+
+#7 [mlflow internal] load build context
+#7 transferring context: 35.44kB 0.0s done
+#7 DONE 0.0s
+
+#8 [api stage-0 2/8] WORKDIR /app
+#8 CACHED
+
+#9 [api stage-0 3/8] COPY requirements-target.lock .
+#9 CACHED
+
+#10 [api stage-0 4/8] RUN --mount=type=cache,target=/root/.cache/pip pip install pip==26.2.1 && pip install --require-hashes -r requirements-target.lock && useradd --uid 10001 --create-home medmlops
+#10 CACHED
+
+#11 [api stage-0 5/8] COPY medmlops ./medmlops
+#11 DONE 0.2s
+
+#11 [api stage-0 5/8] COPY medmlops ./medmlops
+#11 DONE 0.2s
+
+#12 [mlflow stage-0 6/8] COPY configs ./configs
+#12 DONE 0.1s
+
+#12 [api stage-0 6/8] COPY configs ./configs
+#12 DONE 0.1s
+
+#13 [mlflow stage-0 7/8] COPY scripts ./scripts
+#13 DONE 0.2s
+
+#13 [api stage-0 7/8] COPY scripts ./scripts
+#13 DONE 0.2s
+
+#14 [api stage-0 8/8] RUN mkdir -p runtime/mlartifacts runtime/serving && chown -R medmlops:medmlops /app
+#14 DONE 1.0s
+
+#14 [api stage-0 8/8] RUN mkdir -p runtime/mlartifacts runtime/serving && chown -R medmlops:medmlops /app
+#14 DONE 1.0s
+
+#15 [api] exporting to image
+#15 exporting layers
+#15 exporting layers 0.5s done
+#15 exporting manifest sha256:653aca233bd407555e68ad61962cdffd2e85da460ab5356e693db48df2b48e52 0.1s done
+#15 exporting config sha256:7060440421a332117a51f95a80faed591f87c805db9f0ba1d7da6092bc92a24f 0.1s done
+#15 exporting attestation manifest sha256:fcbca9d66a0cf586013641f86c129c063984d621d5fc7ef80cdc1d8413023cf6
+#15 exporting attestation manifest sha256:fcbca9d66a0cf586013641f86c129c063984d621d5fc7ef80cdc1d8413023cf6 0.1s done
+#15 exporting manifest list sha256:b0e5fd3893200daf3e5a94962c95c1fdba3923af0e8c7625fea007fb37305b41 0.1s done
+#15 naming to docker.io/library/medmlops:phase4 0.0s done
+#15 unpacking to docker.io/library/medmlops:phase4
+#15 unpacking to docker.io/library/medmlops:phase4 0.2s done
+#15 DONE 1.2s
+
+#16 [mlflow] exporting to image
+#16 exporting layers 0.5s done
+#16 exporting manifest sha256:0e6517482e7bb0ec309720c8a62dc71fec0234552e5b1610176e964796ec8b19 0.1s done
+#16 exporting config sha256:8f3a250531ca6defde5d270b81178f51b2ed94aadd02ebd45bd358d3d4b2f665 0.1s done
+#16 exporting attestation manifest sha256:9ed10c63dd5726f6df1f1955aa3154c7b4dbc6bce6865ab89476dcfe27e0f42f 0.1s done
+#16 exporting manifest list sha256:3a80d0e37f50145489420a3f0697ac9da0acc3b60327ef646ff9712b0d1aca75 0.1s done
+#16 naming to docker.io/library/medmlops:phase4 0.0s done
+#16 unpacking to docker.io/library/medmlops:phase4 0.2s done
+#16 DONE 1.2s
+
+#17 [mlflow] resolving provenance for metadata file
+#17 DONE 0.0s
+
+#18 [api] resolving provenance for metadata file
+#18 DONE 0.0s
+ Image medmlops:phase4 Built 
+ Image medmlops:phase4 Built 
+ Container medmlops-postgres-1 Running 
+ Container medmlops-prometheus-1 Running 
+ Container medmlops-grafana-1 Running 
+ Container medmlops-migrate-1 Recreate 
+ Container medmlops-volume-init-1 Recreate 
+ Container medmlops-migrate-1 Recreated 
+ Container medmlops-volume-init-1 Recreated 
+ Container medmlops-mlflow-1 Recreate 
+ Container medmlops-mlflow-1 Recreated 
+ Container medmlops-api-1 Recreate 
+ Container medmlops-api-1 Recreated 
+ Container medmlops-volume-init-1 Starting 
+ Container medmlops-postgres-1 Waiting 
+ Container medmlops-volume-init-1 Started 
+ Container medmlops-postgres-1 Waiting 
+ Container medmlops-volume-init-1 Waiting 
+ Container medmlops-postgres-1 Healthy 
+ Container medmlops-migrate-1 Starting 
+ Container medmlops-postgres-1 Healthy 
+ Container medmlops-volume-init-1 Exited 
+ Container medmlops-mlflow-1 Starting 
+ Container medmlops-migrate-1 Started 
+ Container medmlops-mlflow-1 Started 
+ Container medmlops-migrate-1 Waiting 
+ Container medmlops-mlflow-1 Waiting 
+ Container medmlops-migrate-1 Exited 
+ Container medmlops-mlflow-1 Healthy 
+ Container medmlops-api-1 Starting 
+ Container medmlops-api-1 Started 
+ Container medmlops-grafana-1 Waiting 
+ Container medmlops-mlflow-1 Waiting 
+ Container medmlops-migrate-1 Waiting 
+ Container medmlops-volume-init-1 Waiting 
+ Container medmlops-postgres-1 Waiting 
+ Container medmlops-api-1 Waiting 
+ Container medmlops-prometheus-1 Waiting 
+ Container medmlops-migrate-1 Exited 
+ Container medmlops-prometheus-1 Healthy 
+ Container medmlops-mlflow-1 Healthy 
+ Container medmlops-grafana-1 Healthy 
+ Container medmlops-volume-init-1 Exited 
+ Container medmlops-postgres-1 Healthy 
+ Container medmlops-api-1 Healthy 

@@ -1,0 +1,6 @@
+[core]
+    remote = local
+[cache]
+    type = copy
+['remote "local"']
+    url = ../runtime/dvc-remote

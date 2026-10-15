@@ -1,0 +1,7 @@
+{
+  "dataset": {"n": 4000, "seed": 42, "schema": "synthetic-event-v2"},
+  "split": {"train_fraction": 0.6, "validation_fraction": 0.2},
+  "training": {"seed": 42, "cv_folds": 5, "forest_trees": 80, "forest_max_depth": 6},
+  "gate": {"min_auc": 0.78, "min_sensitivity": 0.75, "min_specificity": 0.4, "max_brier": 0.2},
+  "monitoring": {"min_samples": 100, "psi_threshold": 0.2, "auc_drop": 0.08}
+}

@@ -1,0 +1,23 @@
+Stage 'generate' is cached - skipping run, checking out outputs
+Updating lock file 'dvc.lock'
+
+Stage 'validate' is cached - skipping run, checking out outputs
+Updating lock file 'dvc.lock'
+
+Stage 'prepare' is cached - skipping run, checking out outputs
+Updating lock file 'dvc.lock'
+
+Stage 'train' is cached - skipping run, checking out outputs
+Updating lock file 'dvc.lock'
+
+Stage 'evaluate' is cached - skipping run, checking out outputs
+Updating lock file 'dvc.lock'
+
+To track the changes with git, run:
+
+	git add dvc.lock
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.

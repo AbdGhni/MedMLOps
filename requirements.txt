@@ -1,0 +1,3 @@
+# Compatibility entry point for the preserved legacy/core commands.
+# Use requirements-target.lock for the complete target platform.
+-r requirements-core.txt

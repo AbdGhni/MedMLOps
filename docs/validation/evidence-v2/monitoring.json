@@ -1,0 +1,445 @@
+{
+  "stable": {
+    "reference_samples": 1000,
+    "current_samples": 1000,
+    "alerts": [],
+    "automatic_training": false,
+    "automatic_promotion": false,
+    "clinical_validity": false,
+    "evidently": "not executed",
+    "status": "evaluated",
+    "data_drift": {
+      "age": {
+        "psi": 0.022546873890444533,
+        "ks_statistic": 0.033,
+        "ks_pvalue": 0.647814872077161,
+        "alert": false
+      },
+      "sex_code": {
+        "psi": 0.0003990406628950634,
+        "ks_statistic": 0.01,
+        "ks_pvalue": 0.999999999805234,
+        "alert": false
+      },
+      "creatinine": {
+        "psi": 0.02014912636456006,
+        "ks_statistic": 0.033,
+        "ks_pvalue": 0.647814872077161,
+        "alert": false
+      },
+      "crp": {
+        "psi": 0.0443029675144713,
+        "ks_statistic": 0.029,
+        "ks_pvalue": 0.7946637387576738,
+        "alert": false
+      },
+      "heart_rate": {
+        "psi": 0.02878313140150738,
+        "ks_statistic": 0.032,
+        "ks_pvalue": 0.6854967337920594,
+        "alert": false
+      },
+      "systolic_bp": {
+        "psi": 0.02373547118883948,
+        "ks_statistic": 0.046,
+        "ks_pvalue": 0.24068202486600215,
+        "alert": false
+      },
+      "oxygen_saturation": {
+        "psi": 0.014214246114996321,
+        "ks_statistic": 0.051,
+        "ks_pvalue": 0.14836452078962484,
+        "alert": false
+      },
+      "temperature": {
+        "psi": 0.004209059734987378,
+        "ks_statistic": 0.023,
+        "ks_pvalue": 0.9542189106778983,
+        "alert": false
+      },
+      "bmi": {
+        "psi": 0.007222959720350122,
+        "ks_statistic": 0.025,
+        "ks_pvalue": 0.9136894237272155,
+        "alert": false
+      },
+      "prior_event": {
+        "psi": 0.0013403060724857647,
+        "ks_statistic": 0.015,
+        "ks_pvalue": 0.9998734489003387,
+        "alert": false
+      }
+    },
+    "prediction_drift": {
+      "psi": 0.006482578721164539,
+      "ks_pvalue": 0.5728904395829821,
+      "alert": false
+    },
+    "performance": {
+      "status": "unavailable",
+      "reason": "reliable_labels_not_supplied"
+    },
+    "statistics": {
+      "method": "two-sample KS + PSI effect gate",
+      "corrected_alpha": 0.004545454545454546
+    }
+  },
+  "shifted": {
+    "reference_samples": 1000,
+    "current_samples": 1000,
+    "alerts": [
+      {
+        "type": "data_drift",
+        "feature": "heart_rate"
+      },
+      {
+        "type": "data_drift",
+        "feature": "oxygen_saturation"
+      },
+      {
+        "type": "prediction_drift"
+      }
+    ],
+    "automatic_training": false,
+    "automatic_promotion": false,
+    "clinical_validity": false,
+    "evidently": "not executed",
+    "status": "evaluated",
+    "data_drift": {
+      "age": {
+        "psi": 0.022546873890444533,
+        "ks_statistic": 0.033,
+        "ks_pvalue": 0.647814872077161,
+        "alert": false
+      },
+      "sex_code": {
+        "psi": 0.0003990406628950634,
+        "ks_statistic": 0.01,
+        "ks_pvalue": 0.999999999805234,
+        "alert": false
+      },
+      "creatinine": {
+        "psi": 0.02014912636456006,
+        "ks_statistic": 0.033,
+        "ks_pvalue": 0.647814872077161,
+        "alert": false
+      },
+      "crp": {
+        "psi": 0.0443029675144713,
+        "ks_statistic": 0.029,
+        "ks_pvalue": 0.7946637387576738,
+        "alert": false
+      },
+      "heart_rate": {
+        "psi": 1.742674114274026,
+        "ks_statistic": 0.521,
+        "ks_pvalue": 2.954780090542833e-124,
+        "alert": true
+      },
+      "systolic_bp": {
+        "psi": 0.02373547118883948,
+        "ks_statistic": 0.046,
+        "ks_pvalue": 0.24068202486600215,
+        "alert": false
+      },
+      "oxygen_saturation": {
+        "psi": 3.680268529611601,
+        "ks_statistic": 0.713,
+        "ks_pvalue": 4.13683688024471e-245,
+        "alert": true
+      },
+      "temperature": {
+        "psi": 0.004209059734987378,
+        "ks_statistic": 0.023,
+        "ks_pvalue": 0.9542189106778983,
+        "alert": false
+      },
+      "bmi": {
+        "psi": 0.007222959720350122,
+        "ks_statistic": 0.025,
+        "ks_pvalue": 0.9136894237272155,
+        "alert": false
+      },
+      "prior_event": {
+        "psi": 0.0013403060724857647,
+        "ks_statistic": 0.015,
+        "ks_pvalue": 0.9998734489003387,
+        "alert": false
+      }
+    },
+    "prediction_drift": {
+      "psi": 3.238664872176571,
+      "ks_pvalue": 9.787778496005188e-228,
+      "alert": true
+    },
+    "performance": {
+      "status": "unavailable",
+      "reason": "reliable_labels_not_supplied"
+    },
+    "statistics": {
+      "method": "two-sample KS + PSI effect gate",
+      "corrected_alpha": 0.004545454545454546
+    }
+  },
+  "labelled": {
+    "reference_samples": 1000,
+    "current_samples": 1000,
+    "alerts": [],
+    "automatic_training": false,
+    "automatic_promotion": false,
+    "clinical_validity": false,
+    "evidently": "not executed",
+    "status": "evaluated",
+    "data_drift": {
+      "age": {
+        "psi": 0.022546873890444533,
+        "ks_statistic": 0.033,
+        "ks_pvalue": 0.647814872077161,
+        "alert": false
+      },
+      "sex_code": {
+        "psi": 0.0003990406628950634,
+        "ks_statistic": 0.01,
+        "ks_pvalue": 0.999999999805234,
+        "alert": false
+      },
+      "creatinine": {
+        "psi": 0.02014912636456006,
+        "ks_statistic": 0.033,
+        "ks_pvalue": 0.647814872077161,
+        "alert": false
+      },
+      "crp": {
+        "psi": 0.0443029675144713,
+        "ks_statistic": 0.029,
+        "ks_pvalue": 0.7946637387576738,
+        "alert": false
+      },
+      "heart_rate": {
+        "psi": 0.02878313140150738,
+        "ks_statistic": 0.032,
+        "ks_pvalue": 0.6854967337920594,
+        "alert": false
+      },
+      "systolic_bp": {
+        "psi": 0.02373547118883948,
+        "ks_statistic": 0.046,
+        "ks_pvalue": 0.24068202486600215,
+        "alert": false
+      },
+      "oxygen_saturation": {
+        "psi": 0.014214246114996321,
+        "ks_statistic": 0.051,
+        "ks_pvalue": 0.14836452078962484,
+        "alert": false
+      },
+      "temperature": {
+        "psi": 0.004209059734987378,
+        "ks_statistic": 0.023,
+        "ks_pvalue": 0.9542189106778983,
+        "alert": false
+      },
+      "bmi": {
+        "psi": 0.007222959720350122,
+        "ks_statistic": 0.025,
+        "ks_pvalue": 0.9136894237272155,
+        "alert": false
+      },
+      "prior_event": {
+        "psi": 0.0013403060724857647,
+        "ks_statistic": 0.015,
+        "ks_pvalue": 0.9998734489003387,
+        "alert": false
+      }
+    },
+    "prediction_drift": {
+      "psi": 0.006482578721164539,
+      "ks_pvalue": 0.5728904395829821,
+      "alert": false
+    },
+    "performance": {
+      "status": "measured",
+      "metrics": {
+        "auc": 0.8678200547441443,
+        "average_precision": 0.7156271740471949,
+        "brier": 0.123460485713787,
+        "sensitivity": 0.8178294573643411,
+        "specificity": 0.7196765498652291,
+        "confusion": {
+          "tn": 534,
+          "fp": 208,
+          "fn": 47,
+          "tp": 211
+        },
+        "samples": 1000,
+        "positives": 258,
+        "pr_auc": 0.7149463992244663,
+        "f1": 0.6233382570162481,
+        "calibration": {
+          "observed": [
+            0.02481389578163772,
+            0.2,
+            0.2289156626506024,
+            0.32894736842105265,
+            0.3770491803278688,
+            0.425,
+            0.6730769230769231,
+            0.6808510638297872,
+            0.7674418604651163,
+            0.9142857142857143
+          ],
+          "predicted": [
+            0.033466349564101196,
+            0.1471121285202081,
+            0.2461133879923192,
+            0.35165675045552874,
+            0.4449347183080866,
+            0.5441521301113322,
+            0.655632993426791,
+            0.7416111896326173,
+            0.8485561764056736,
+            0.9539595969784086
+          ]
+        }
+      },
+      "auc_drop": -0.0008396959686469696
+    },
+    "statistics": {
+      "method": "two-sample KS + PSI effect gate",
+      "corrected_alpha": 0.004545454545454546
+    }
+  },
+  "regression": {
+    "reference_samples": 1000,
+    "current_samples": 1000,
+    "alerts": [
+      {
+        "type": "performance_degradation",
+        "note": "Observed AUC decrease; operator investigation required"
+      }
+    ],
+    "automatic_training": false,
+    "automatic_promotion": false,
+    "clinical_validity": false,
+    "evidently": "not executed",
+    "status": "evaluated",
+    "data_drift": {
+      "age": {
+        "psi": 0.022546873890444533,
+        "ks_statistic": 0.033,
+        "ks_pvalue": 0.647814872077161,
+        "alert": false
+      },
+      "sex_code": {
+        "psi": 0.0003990406628950634,
+        "ks_statistic": 0.01,
+        "ks_pvalue": 0.999999999805234,
+        "alert": false
+      },
+      "creatinine": {
+        "psi": 0.02014912636456006,
+        "ks_statistic": 0.033,
+        "ks_pvalue": 0.647814872077161,
+        "alert": false
+      },
+      "crp": {
+        "psi": 0.0443029675144713,
+        "ks_statistic": 0.029,
+        "ks_pvalue": 0.7946637387576738,
+        "alert": false
+      },
+      "heart_rate": {
+        "psi": 0.02878313140150738,
+        "ks_statistic": 0.032,
+        "ks_pvalue": 0.6854967337920594,
+        "alert": false
+      },
+      "systolic_bp": {
+        "psi": 0.02373547118883948,
+        "ks_statistic": 0.046,
+        "ks_pvalue": 0.24068202486600215,
+        "alert": false
+      },
+      "oxygen_saturation": {
+        "psi": 0.014214246114996321,
+        "ks_statistic": 0.051,
+        "ks_pvalue": 0.14836452078962484,
+        "alert": false
+      },
+      "temperature": {
+        "psi": 0.004209059734987378,
+        "ks_statistic": 0.023,
+        "ks_pvalue": 0.9542189106778983,
+        "alert": false
+      },
+      "bmi": {
+        "psi": 0.007222959720350122,
+        "ks_statistic": 0.025,
+        "ks_pvalue": 0.9136894237272155,
+        "alert": false
+      },
+      "prior_event": {
+        "psi": 0.0013403060724857647,
+        "ks_statistic": 0.015,
+        "ks_pvalue": 0.9998734489003387,
+        "alert": false
+      }
+    },
+    "prediction_drift": {
+      "psi": 0.006482578721164539,
+      "ks_pvalue": 0.5728904395829821,
+      "alert": false
+    },
+    "performance": {
+      "status": "measured",
+      "metrics": {
+        "auc": 0.13217994525585575,
+        "average_precision": 0.5599579315393064,
+        "brier": 0.6408701549418443,
+        "sensitivity": 0.2803234501347709,
+        "specificity": 0.1821705426356589,
+        "confusion": {
+          "tn": 47,
+          "fp": 211,
+          "fn": 534,
+          "tp": 208
+        },
+        "samples": 1000,
+        "positives": 742,
+        "pr_auc": 0.5592212200780342,
+        "f1": 0.35831180017226527,
+        "calibration": {
+          "observed": [
+            0.9751861042183623,
+            0.8,
+            0.7710843373493976,
+            0.6710526315789473,
+            0.6229508196721312,
+            0.575,
+            0.3269230769230769,
+            0.3191489361702128,
+            0.23255813953488372,
+            0.08571428571428572
+          ],
+          "predicted": [
+            0.033466349564101196,
+            0.1471121285202081,
+            0.2461133879923192,
+            0.35165675045552874,
+            0.4449347183080866,
+            0.5441521301113322,
+            0.655632993426791,
+            0.7416111896326173,
+            0.8485561764056736,
+            0.9539595969784086
+          ]
+        }
+      },
+      "auc_drop": 0.7348004135196415
+    },
+    "statistics": {
+      "method": "two-sample KS + PSI effect gate",
+      "corrected_alpha": 0.004545454545454546
+    }
+  }
+}

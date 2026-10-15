@@ -1,0 +1,68 @@
+# Real five-stage synthetic v2 pipeline. Publication/approval are explicit operations.
+stages:
+  generate:
+    cmd: python -m medmlops.pipeline generate --work data
+    deps:
+      - medmlops/datasets.py
+      - medmlops/data.py
+      - medmlops/pipeline.py
+    params:
+      - configs/params.json:
+          - dataset
+    outs:
+      - data/raw
+      - data/dataset.json
+  validate:
+    cmd: python -m medmlops.pipeline validate --work data
+    deps:
+      - data/raw
+      - data/dataset.json
+      - medmlops/datasets.py
+      - medmlops/pipeline.py
+      - medmlops/data.py
+    outs:
+      - data/validation.json
+  prepare:
+    cmd: python -m medmlops.pipeline prepare --work data
+    deps:
+      - data/raw
+      - data/dataset.json
+      - data/validation.json
+      - medmlops/experiments.py
+      - medmlops/pipeline.py
+      - medmlops/datasets.py
+    params:
+      - configs/params.json:
+          - split
+          - training.seed
+    outs:
+      - data/prepared
+  train:
+    cmd: python -m medmlops.pipeline train --work data
+    deps:
+      - data/prepared
+      - medmlops/experiments.py
+      - medmlops/scoring.py
+      - medmlops/train.py
+      - medmlops/pipeline.py
+      - medmlops/datasets.py
+      - medmlops/data.py
+    params:
+      - configs/params.json:
+          - training
+    outs:
+      - data/candidates
+      - data/comparison.json
+  evaluate:
+    cmd: python -m medmlops.pipeline evaluate --work data
+    deps:
+      - data/candidates
+      - data/comparison.json
+      - medmlops/experiments.py
+      - medmlops/pipeline.py
+    params:
+      - configs/params.json:
+          - gate
+    metrics:
+      - data/gate.json:
+          cache: false

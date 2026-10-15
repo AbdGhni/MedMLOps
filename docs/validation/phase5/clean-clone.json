@@ -1,0 +1,13 @@
+{
+  "commit": "[private-revision]",
+  "clone_method": "git clone --no-hardlinks, then local fast-forward",
+  "isolated_venv": true,
+  "hash_locked_install": true,
+  "package_build_and_install": "medmlops 2.0.0rc1",
+  "pip_check_exit": 0,
+  "pytest_tests_passed": 30,
+  "pytest_warning": "Starlette httpx deprecation",
+  "pipeline_exit": 0,
+  "clean_training_provenance": true,
+  "same_platform_model_hashes_match": true
+}

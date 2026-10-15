@@ -1,0 +1,314 @@
+Stage 'generate' didn't change, skipping
+Stage 'validate' didn't change, skipping
+Stage 'prepare' didn't change, skipping
+Running stage 'train':
+> python -m medmlops.pipeline train --work data
+{
+  "stage": "train",
+  "result": {
+    "dataset_version": "e484b55443e8864257b6ca6e1a1e9ddd2c00d9ea8ca0ad6ffa40c18568c08228",
+    "models": {
+      "logistic": {
+        "run_id": "f10ae83edf7d426c801469d2b37da926",
+        "kind": "logistic",
+        "dataset_version": "e484b55443e8864257b6ca6e1a1e9ddd2c00d9ea8ca0ad6ffa40c18568c08228",
+        "git_commit": "[private-revision]",
+        "git_dirty": true,
+        "source_sha256": "cf73e7d8daed2bb7e5122d8d604aa1898f4a04d5295260c8f635b0d4062f52e2",
+        "seed": 42,
+        "parameters": {
+          "seed": 42,
+          "cv_folds": 5,
+          "forest_trees": 80,
+          "forest_max_depth": 6
+        },
+        "environment": {
+          "numpy": "2.2.6",
+          "pandas": "2.3.3",
+          "scikit-learn": "1.7.2",
+          "pydantic": "2.12.3",
+          "scipy": "1.14.1",
+          "python": "3.12.4"
+        },
+        "model_sha256": "fd22fd94e0ceafaa471b1755c8916cad56ae3e7944481adc72b2360df3a4430c",
+        "cv": {
+          "folds": [
+            0.8643671121415604,
+            0.9180428268334827,
+            0.887180384522846,
+            0.9091624926179488,
+            0.8836424590734935
+          ],
+          "auc_mean": 0.8924790550378663,
+          "auc_std": 0.01912216613658789
+        },
+        "validation": {
+          "auc": 0.8826460440588184,
+          "average_precision": 0.7418601085050668,
+          "brier": 0.12102781591300563,
+          "sensitivity": 0.8538812785388128,
+          "specificity": 0.7366609294320138,
+          "confusion": {
+            "tn": 428,
+            "fp": 153,
+            "fn": 32,
+            "tp": 187
+          },
+          "samples": 800,
+          "positives": 219,
+          "pr_auc": 0.7409661608347954,
+          "f1": 0.669051878354204,
+          "calibration": {
+            "observed": [
+              0.021739130434782608,
+              0.17391304347826086,
+              0.25,
+              0.35294117647058826,
+              0.4772727272727273,
+              0.5581395348837209,
+              0.65,
+              0.6774193548387096,
+              0.7619047619047619,
+              0.9375
+            ],
+            "predicted": [
+              0.03463510290273256,
+              0.14515449900395855,
+              0.24581861639067748,
+              0.34682352711451747,
+              0.4486444966819921,
+              0.543575453559234,
+              0.6491004244907405,
+              0.7470808504452926,
+              0.8473067635070611,
+              0.9470028768681625
+            ]
+          }
+        },
+        "test": {
+          "auc": 0.8669803587754973,
+          "average_precision": 0.7391244651311244,
+          "brier": 0.12517084439460027,
+          "sensitivity": 0.7981651376146789,
+          "specificity": 0.7405498281786942,
+          "confusion": {
+            "tn": 431,
+            "fp": 151,
+            "fn": 44,
+            "tp": 174
+          },
+          "samples": 800,
+          "positives": 218,
+          "pr_auc": 0.7384642840541666,
+          "f1": 0.6408839779005525,
+          "calibration": {
+            "observed": [
+              0.04985337243401759,
+              0.20491803278688525,
+              0.19402985074626866,
+              0.38,
+              0.36,
+              0.6176470588235294,
+              0.6585365853658537,
+              0.7096774193548387,
+              0.7575757575757576,
+              1.0
+            ],
+            "predicted": [
+              0.03499579484422353,
+              0.14385588045795683,
+              0.25025615061249606,
+              0.3492500385310739,
+              0.4415729751613654,
+              0.5509417670341664,
+              0.653762666591568,
+              0.7475719850603368,
+              0.854293621398313,
+              0.9530129049790567
+            ]
+          }
+        },
+        "parity_max_error": 1.1102230246251565e-16,
+        "threshold": 0.22000000000000003,
+        "tracking": "local evidence only; MLflow integration not executed"
+      },
+      "forest": {
+        "run_id": "4efb88ffd3fd431e848f2dd55dd80543",
+        "kind": "forest",
+        "dataset_version": "e484b55443e8864257b6ca6e1a1e9ddd2c00d9ea8ca0ad6ffa40c18568c08228",
+        "git_commit": "[private-revision]",
+        "git_dirty": true,
+        "source_sha256": "cf73e7d8daed2bb7e5122d8d604aa1898f4a04d5295260c8f635b0d4062f52e2",
+        "seed": 42,
+        "parameters": {
+          "seed": 42,
+          "cv_folds": 5,
+          "forest_trees": 80,
+          "forest_max_depth": 6
+        },
+        "environment": {
+          "numpy": "2.2.6",
+          "pandas": "2.3.3",
+          "scikit-learn": "1.7.2",
+          "pydantic": "2.12.3",
+          "scipy": "1.14.1",
+          "python": "3.12.4"
+        },
+        "model_sha256": "c52eeb7aaaaa8c5024a333ec1ca0e8b27c1ca858900eb8c016534c4009541943",
+        "cv": {
+          "folds": [
+            0.8290645027231567,
+            0.9001071764474289,
+            0.8581333799951879,
+            0.8855180559504802,
+            0.8745428422152561
+          ],
+          "auc_mean": 0.869473191466302,
+          "auc_std": 0.024425533856997805
+        },
+        "validation": {
+          "auc": 0.8546672010940042,
+          "average_precision": 0.7127587478253087,
+          "brier": 0.13504508197755233,
+          "sensitivity": 0.8584474885844748,
+          "specificity": 0.6523235800344234,
+          "confusion": {
+            "tn": 379,
+            "fp": 202,
+            "fn": 31,
+            "tp": 188
+          },
+          "samples": 800,
+          "positives": 219,
+          "pr_auc": 0.7119709786693383,
+          "f1": 0.6174055829228243,
+          "calibration": {
+            "observed": [
+              0.021621621621621623,
+              0.08379888268156424,
+              0.2540983606557377,
+              0.3302752293577982,
+              0.5,
+              0.6333333333333333,
+              0.71875,
+              0.9354838709677419,
+              1.0
+            ],
+            "predicted": [
+              0.06704122462512965,
+              0.14898441788438235,
+              0.2472853249213429,
+              0.34243194559494505,
+              0.4506507672371829,
+              0.5515378272282334,
+              0.6508247633091003,
+              0.7406848778564743,
+              0.8202066725192686
+            ]
+          }
+        },
+        "test": {
+          "auc": 0.8376998013808759,
+          "average_precision": 0.6919509534605888,
+          "brier": 0.13959127459754977,
+          "sensitivity": 0.7935779816513762,
+          "specificity": 0.6941580756013745,
+          "confusion": {
+            "tn": 404,
+            "fp": 178,
+            "fn": 45,
+            "tp": 173
+          },
+          "samples": 800,
+          "positives": 218,
+          "pr_auc": 0.6911646087163512,
+          "f1": 0.6080843585237259,
+          "calibration": {
+            "observed": [
+              0.030612244897959183,
+              0.12745098039215685,
+              0.25203252032520324,
+              0.40229885057471265,
+              0.43661971830985913,
+              0.6041666666666666,
+              0.7674418604651163,
+              0.9411764705882353,
+              1.0
+            ],
+            "predicted": [
+              0.06686228750274593,
+              0.1462561496311545,
+              0.24315379259571734,
+              0.34178706447271917,
+              0.44669343345136436,
+              0.5475946706823256,
+              0.6506589506248563,
+              0.7413040531289398,
+              0.8250248304482181
+            ]
+          }
+        },
+        "parity_max_error": 0.0,
+        "threshold": 0.235,
+        "tracking": "local evidence only; MLflow integration not executed"
+      }
+    },
+    "selected": "logistic",
+    "selection_basis": "validation ROC-AUC only; test never selects model",
+    "clinical_validity": false
+  }
+}
+Updating lock file 'dvc.lock'
+
+Running stage 'evaluate':
+> python -m medmlops.pipeline evaluate --work data
+{
+  "stage": "evaluate",
+  "result": {
+    "selected": "logistic",
+    "decisions": {
+      "forest": {
+        "model_sha256": "c52eeb7aaaaa8c5024a333ec1ca0e8b27c1ca858900eb8c016534c4009541943",
+        "checks": {
+          "auc": true,
+          "sensitivity": true,
+          "specificity": true,
+          "brier": true,
+          "parity": true,
+          "artifact_integrity": true
+        },
+        "passed": true
+      },
+      "logistic": {
+        "model_sha256": "fd22fd94e0ceafaa471b1755c8916cad56ae3e7944481adc72b2360df3a4430c",
+        "checks": {
+          "auc": true,
+          "sensitivity": true,
+          "specificity": true,
+          "brier": true,
+          "parity": true,
+          "artifact_integrity": true
+        },
+        "passed": true
+      }
+    },
+    "criteria": {
+      "min_auc": 0.78,
+      "min_sensitivity": 0.75,
+      "min_specificity": 0.4,
+      "max_brier": 0.2
+    },
+    "selected_passed": true,
+    "promotion_performed": false
+  }
+}
+Updating lock file 'dvc.lock'
+
+To track the changes with git, run:
+
+	git add dvc.lock
+
+To enable auto staging, run:
+
+	dvc config core.autostage true
+Use `dvc push` to send your updates to remote storage.

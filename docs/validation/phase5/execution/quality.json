@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-10-15T12:05:23.157894+00:00",
+  "python": "3.12.4",
+  "checks": {
+    "pip-check": {
+      "exit_code": 0,
+      "command": [
+        "python.exe",
+        "-m",
+        "pip",
+        "check"
+      ]
+    },
+    "tests": {
+      "exit_code": 0,
+      "command": [
+        "python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ]
+    },
+    "lint": {
+      "exit_code": 0,
+      "command": [
+        "python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "medmlops",
+        "scripts",
+        "tests"
+      ]
+    },
+    "typing": {
+      "exit_code": 0,
+      "command": [
+        "python.exe",
+        "-m",
+        "mypy",
+        "--check-untyped-defs",
+        "--ignore-missing-imports",
+        "medmlops/settings.py",
+        "medmlops/governance.py",
+        "medmlops/tracking.py",
+        "medmlops/serving.py",
+        "medmlops/monitoring.py",
+        "medmlops/pyfunc.py"
+      ]
+    }
+  },
+  "versions": {
+    "mlflow": "3.17.1",
+    "dvc": "3.67.1",
+    "fastapi": "0.143.1",
+    "uvicorn": "0.54.0",
+    "evidently": "0.7.23",
+    "psycopg": "3.3.6",
+    "prometheus-client": "0.26.0"
+  },
+  "hashes": {},
+  "browser_rendering": "not verified: no enabled computer-use browser surface",
+  "github_actions_execution": "not run; no publication authorized"
+}

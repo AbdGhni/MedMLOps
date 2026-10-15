@@ -1,0 +1,14 @@
+{
+  "git_commit": "[private-revision]",
+  "checks": {
+    "dataset_hash_equal": true,
+    "model_hashes_equal": true,
+    "git_clean_during_training": true
+  },
+  "models": {
+    "forest": "b290c5a5075e98aaf496e64d2ba107bbb8c4c033b7b46c16cf5f04501f98ee64",
+    "logistic": "2e5ff307147aa9c677258af5188228d5143968010f7db8d42c4f85288d4bc9b3"
+  },
+  "same_platform_only": true,
+  "mlflow_or_dvc_execution": false
+}

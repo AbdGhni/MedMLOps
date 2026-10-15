@@ -1,0 +1,11 @@
+Processing .\.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: medmlops
+  Building wheel for medmlops (pyproject.toml): started
+  Building wheel for medmlops (pyproject.toml): finished with status 'done'
+  Created wheel for medmlops: filename=medmlops-2.0.0rc1-py3-none-any.whl size=36729 sha256=ab6a5615ffec081c2371035ddb07a89a18af80a52ac5254450882032d6acd938
+  Stored in directory: C:/home/USER
+Successfully built medmlops
+Installing collected packages: medmlops
+Successfully installed medmlops-2.0.0rc1

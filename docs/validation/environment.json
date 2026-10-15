@@ -1,0 +1,82 @@
+{
+  "executed_at": "2026-10-14T19:31:18.961643+00:00",
+  "repository": "C:/home/USER",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.4",
+  "logical_cpus": 16,
+  "disk_free_bytes": 44658479104,
+  "docker_memory": "unknown unless docker info succeeds",
+  "pip_no_index": "1",
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.14.1",
+    "pydantic": "2.12.3",
+    "fastapi": "NOT_INSTALLED",
+    "uvicorn": "NOT_INSTALLED",
+    "mlflow": "NOT_INSTALLED",
+    "dvc": "NOT_INSTALLED",
+    "evidently": "NOT_INSTALLED",
+    "pytest": "NOT_INSTALLED",
+    "ruff": "NOT_INSTALLED",
+    "mypy": "NOT_INSTALLED",
+    "pip-audit": "NOT_INSTALLED",
+    "prometheus-client": "NOT_INSTALLED",
+    "psycopg": "NOT_INSTALLED"
+  },
+  "commands": [
+    {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "stdout": "M .gitignore\n M README.md\n M docs/ARCHITECTURE.md\n M docs/DATA_CONTRACT.md\n M docs/DEMO.md\n M docs/MODEL_CARD.md\n M docs/RUNBOOK.md\n M docs/VALIDATION.md\n M pyproject.toml\n?? .env.example\n?? Makefile\n?? configs/\n?? docs/Progress.md\n?? docs/Tickets.md\n?? docs/adr/\n?? docs/architecture/\n?? docs/data-contract-v2.md\n?? docs/portfolio-draft.md\n?? docs/runbooks/\n?? docs/validation/\n?? dvc.yaml\n?? medmlops/datasets.py\n?? medmlops/experiments.py\n?? medmlops/monitor_windows.py\n?? medmlops/pipeline.py\n?? medmlops/scoring.py\n?? requirements-core.txt\n?? requirements-target.in\n?? scripts/Validate-Core.ps1\n?? scripts/audit_environment.py\n?? scripts/validate_v2.py\n?? tests/test_v2.py",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "[private-revision]",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "version",
+        "--format",
+        "{{.Client.Version}} {{.Server.Version}}"
+      ],
+      "exit_code": 1,
+      "stdout": "29.8.2",
+      "stderr": "failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified."
+    },
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{{.NCPU}} {{.MemTotal}}"
+      ],
+      "exit_code": 1,
+      "stdout": "0 0",
+      "stderr": "failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified."
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "Docker Compose version v5.6.0",
+      "stderr": ""
+    }
+  ]
+}

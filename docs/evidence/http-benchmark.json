@@ -1,0 +1,7 @@
+{
+  "mode": "100 sequential loopback requests; 10 warmups; SQLite audit enabled",
+  "samples": 100,
+  "p50_ms": 18.52680000001783,
+  "p95_ms": 33.35943999959454,
+  "max_ms": 34.85060000002704
+}

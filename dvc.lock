@@ -1,0 +1,183 @@
+schema: '2.0'
+stages:
+  generate:
+    cmd: python -m medmlops.pipeline generate --work data
+    deps:
+    - path: medmlops/data.py
+      hash: md5
+      md5: 89dbcce3313373a707b667a45259bde1
+      size: 2127
+    - path: medmlops/datasets.py
+      hash: md5
+      md5: c81b996fcc7e37ad55f0da2f69ed1d78
+      size: 5635
+    - path: medmlops/pipeline.py
+      hash: md5
+      md5: c84d532af435dd346f3ce80b558fe751
+      size: 2612
+    params:
+      configs/params.json:
+        dataset:
+          n: 4000
+          seed: 42
+          schema: synthetic-event-v2
+    outs:
+    - path: data/dataset.json
+      hash: md5
+      md5: 38b4bca1ed00776b6913a004d067d1fe
+      size: 279
+    - path: data/raw
+      hash: md5
+      md5: fe3dcc3ad64ba81e9da86cb2c06783e1.dir
+      size: 524255
+      nfiles: 2
+  validate:
+    cmd: python -m medmlops.pipeline validate --work data
+    deps:
+    - path: data/dataset.json
+      hash: md5
+      md5: 38b4bca1ed00776b6913a004d067d1fe
+      size: 279
+    - path: data/raw
+      hash: md5
+      md5: fe3dcc3ad64ba81e9da86cb2c06783e1.dir
+      size: 524255
+      nfiles: 2
+    - path: medmlops/data.py
+      hash: md5
+      md5: 89dbcce3313373a707b667a45259bde1
+      size: 2127
+    - path: medmlops/datasets.py
+      hash: md5
+      md5: c81b996fcc7e37ad55f0da2f69ed1d78
+      size: 5635
+    - path: medmlops/pipeline.py
+      hash: md5
+      md5: c84d532af435dd346f3ce80b558fe751
+      size: 2612
+    outs:
+    - path: data/validation.json
+      hash: md5
+      md5: f923bd1340e7f78565a8148d7b2c685b
+      size: 218
+  prepare:
+    cmd: python -m medmlops.pipeline prepare --work data
+    deps:
+    - path: data/dataset.json
+      hash: md5
+      md5: 38b4bca1ed00776b6913a004d067d1fe
+      size: 279
+    - path: data/raw
+      hash: md5
+      md5: fe3dcc3ad64ba81e9da86cb2c06783e1.dir
+      size: 524255
+      nfiles: 2
+    - path: data/validation.json
+      hash: md5
+      md5: f923bd1340e7f78565a8148d7b2c685b
+      size: 218
+    - path: medmlops/datasets.py
+      hash: md5
+      md5: c81b996fcc7e37ad55f0da2f69ed1d78
+      size: 5635
+    - path: medmlops/experiments.py
+      hash: md5
+      md5: 7cc533d9ae5982e247c3e7287ac8f65e
+      size: 8422
+    - path: medmlops/pipeline.py
+      hash: md5
+      md5: c84d532af435dd346f3ce80b558fe751
+      size: 2612
+    params:
+      configs/params.json:
+        split:
+          train_fraction: 0.6
+          validation_fraction: 0.2
+        training.seed: 42
+    outs:
+    - path: data/prepared
+      hash: md5
+      md5: e6763960dd9d80a84c116397678226d3.dir
+      size: 259613
+      nfiles: 2
+  train:
+    cmd: python -m medmlops.pipeline train --work data
+    deps:
+    - path: data/prepared
+      hash: md5
+      md5: e6763960dd9d80a84c116397678226d3.dir
+      size: 259613
+      nfiles: 2
+    - path: medmlops/data.py
+      hash: md5
+      md5: 89dbcce3313373a707b667a45259bde1
+      size: 2127
+    - path: medmlops/datasets.py
+      hash: md5
+      md5: c81b996fcc7e37ad55f0da2f69ed1d78
+      size: 5635
+    - path: medmlops/experiments.py
+      hash: md5
+      md5: 7cc533d9ae5982e247c3e7287ac8f65e
+      size: 8422
+    - path: medmlops/pipeline.py
+      hash: md5
+      md5: c84d532af435dd346f3ce80b558fe751
+      size: 2612
+    - path: medmlops/scoring.py
+      hash: md5
+      md5: 21802369fdb85ca7b4e7178974b7e0d2
+      size: 2572
+    - path: medmlops/train.py
+      hash: md5
+      md5: abda3c18e658f5c87cd089eca8b0770d
+      size: 5999
+    params:
+      configs/params.json:
+        training:
+          seed: 42
+          cv_folds: 5
+          forest_trees: 80
+          forest_max_depth: 6
+    outs:
+    - path: data/candidates
+      hash: md5
+      md5: 19fcd801dc2bdfeb5adca36469662c64.dir
+      size: 267503
+      nfiles: 4
+    - path: data/comparison.json
+      hash: md5
+      md5: 74f5e5e011f6fa2ad80c25b47c6cefe9
+      size: 4734
+  evaluate:
+    cmd: python -m medmlops.pipeline evaluate --work data
+    deps:
+    - path: data/candidates
+      hash: md5
+      md5: 19fcd801dc2bdfeb5adca36469662c64.dir
+      size: 267503
+      nfiles: 4
+    - path: data/comparison.json
+      hash: md5
+      md5: 74f5e5e011f6fa2ad80c25b47c6cefe9
+      size: 4734
+    - path: medmlops/experiments.py
+      hash: md5
+      md5: 7cc533d9ae5982e247c3e7287ac8f65e
+      size: 8422
+    - path: medmlops/pipeline.py
+      hash: md5
+      md5: c84d532af435dd346f3ce80b558fe751
+      size: 2612
+    params:
+      configs/params.json:
+        gate:
+          min_auc: 0.78
+          min_sensitivity: 0.75
+          min_specificity: 0.4
+          max_brier: 0.2
+    outs:
+    - path: data/gate.json
+      hash: md5
+      md5: 62c2e43d75caa198f31a71380adb1369
+      size: 619

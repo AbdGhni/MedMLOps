@@ -1,0 +1,176 @@
+{
+  "executed_at": "2026-10-14T19:54:37.000207+00:00",
+  "repository": "C:/home/USER",
+  "python": "3.12.4",
+  "python_executable": "C:\\Program Files\\Python312\\python.exe",
+  "policy_changed": false,
+  "pip_no_index": "1",
+  "proxy_environment": {
+    "HTTP_PROXY": {
+      "host": "127.0.0.1",
+      "port": 9,
+      "credentials_present": false
+    },
+    "HTTPS_PROXY": {
+      "host": "127.0.0.1",
+      "port": 9,
+      "credentials_present": false
+    },
+    "ALL_PROXY": {
+      "host": "127.0.0.1",
+      "port": 9,
+      "credentials_present": false
+    }
+  },
+  "dns": {
+    "pypi.org": {
+      "addresses": [
+        "151.101.0.223",
+        "151.101.128.223",
+        "151.101.192.223",
+        "151.101.64.223"
+      ]
+    },
+    "files.pythonhosted.org": {
+      "addresses": [
+        "151.101.0.223",
+        "151.101.128.223",
+        "151.101.192.223",
+        "151.101.64.223"
+      ]
+    }
+  },
+  "pip_config_files": [
+    {
+      "path": "C:\\ProgramData\\pip\\pip.ini",
+      "exists": false
+    },
+    {
+      "path": "C:/home/USER",
+      "exists": false
+    },
+    {
+      "path": "C:/home/USER",
+      "exists": false
+    },
+    {
+      "path": "C:/home/USER",
+      "exists": false
+    }
+  ],
+  "pypi_https": {
+    "error_type": "ConnectionRefusedError",
+    "code": 10061,
+    "tls": "not verified; connection failed before a successful request"
+  },
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.7.2",
+    "pydantic": "2.12.3",
+    "fastapi": "NOT_INSTALLED",
+    "uvicorn": "NOT_INSTALLED",
+    "mlflow": "NOT_INSTALLED",
+    "dvc": "NOT_INSTALLED",
+    "evidently": "NOT_INSTALLED",
+    "pytest": "NOT_INSTALLED",
+    "ruff": "NOT_INSTALLED",
+    "mypy": "NOT_INSTALLED",
+    "pip-audit": "NOT_INSTALLED",
+    "prometheus-client": "NOT_INSTALLED",
+    "psycopg": "NOT_INSTALLED"
+  },
+  "commands": [
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "[private-revision]",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit_code": 0,
+      "stdout": "?? docs/runbooks/environment-unblock.md\n?? scripts/Migrate-Repository.ps1\n?? scripts/diagnose_environment.py",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "cat-file",
+        "-t",
+        "[private-revision]"
+      ],
+      "exit_code": 0,
+      "stdout": "commit",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "git version 2.55.0.windows.5",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Program Files\\Python312\\python.exe",
+        "-m",
+        "pip",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "pip 25.2 from C:/home/USER (python 3.12)",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "version"
+      ],
+      "exit_code": 1,
+      "stdout": "Client:\n Version:           29.8.2\n API version:       1.56\n Go version:        go1.26.8\n Git commit:        7fc2dff\n Built:             Wed Sep 30 19:35:42 2026\n OS/Arch:           windows/amd64\n Context:           desktop-linux",
+      "stderr": "failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified."
+    },
+    {
+      "command": [
+        "docker",
+        "compose",
+        "version"
+      ],
+      "exit_code": 0,
+      "stdout": "Docker Compose version v5.6.0",
+      "stderr": ""
+    }
+  ],
+  "venv_core_imports": {
+    "command": [
+      "C:/home/USER",
+      "-c",
+      "import numpy,pandas,sklearn,pydantic; print('core imports OK')"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'numpy'"
+  },
+  "archive": {
+    "sha256": "7fcb877432c7ac6942dd7ae18dcf0c5bca8c879c4816f69a5029803b09be2039",
+    "expected_match": true,
+    "crc_ok": true
+  },
+  "limitations": [
+    "No firewall or ACL modification",
+    "TLS cannot be inferred from DNS",
+    "Package installation and Docker integration not performed"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "executed_at": "2026-10-14T19:58:38.418684+00:00",
+  "results": [
+    {
+      "name": "pipeline",
+      "exit_code": 0
+    },
+    {
+      "name": "tests",
+      "exit_code": 0
+    }
+  ],
+  "core_passed": true,
+  "full_platform_passed": false,
+  "not_executed": [
+    "DVC",
+    "MLflow/PostgreSQL",
+    "FastAPI/Uvicorn",
+    "Evidently",
+    "Prometheus/Grafana",
+    "Docker",
+    "pytest/Ruff/pip-audit",
+    "target deployment/rollback"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-15T12:16:32.177077+00:00",
+  "markdown_links_passed": true,
+  "documents_checked": 15,
+  "portfolio_files": 7,
+  "interview_questions": 30,
+  "workflows_parsed": {
+    "ci.yml": [
+      "push",
+      "pull_request",
+      "workflow_dispatch"
+    ],
+    "controlled-deploy.yml": [
+      "workflow_dispatch"
+    ],
+    "controlled-training.yml": [
+      "workflow_dispatch"
+    ],
+    "core-ci.yml": [
+      "push",
+      "pull_request",
+      "workflow_dispatch"
+    ],
+    "target-ci.yml": [
+      "push",
+      "pull_request",
+      "workflow_dispatch"
+    ]
+  },
+  "phase4_evidence_preserved_since_local_snapshot": "[private-revision]",
+  "source_commit": "[private-revision]"
+}

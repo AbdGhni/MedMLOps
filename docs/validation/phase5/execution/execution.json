@@ -1,0 +1,97 @@
+{
+  "executed_at": "2026-10-15T12:08:33.567629+00:00",
+  "commit": "[private-revision]",
+  "clean_at_start": true,
+  "results": [
+    {
+      "lane": "quality",
+      "exit_code": 0,
+      "command": [
+        "C:/Projects/MedMLOps\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.record_phase4_quality"
+      ]
+    },
+    {
+      "lane": "unittest",
+      "exit_code": 0,
+      "command": [
+        "C:/Projects/MedMLOps\\.venv\\Scripts\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    },
+    {
+      "lane": "pipeline",
+      "exit_code": 0,
+      "command": [
+        "C:/Projects/MedMLOps\\.venv\\Scripts\\python.exe",
+        "-m",
+        "medmlops.pipeline",
+        "all",
+        "--work",
+        "runtime/phase4"
+      ]
+    },
+    {
+      "lane": "compose-build-start",
+      "exit_code": 0,
+      "command": [
+        "docker",
+        "compose",
+        "up",
+        "--build",
+        "-d",
+        "--wait",
+        "--wait-timeout",
+        "240"
+      ]
+    },
+    {
+      "lane": "dvc",
+      "exit_code": 0,
+      "command": [
+        "C:/Projects/MedMLOps\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.check_dvc"
+      ]
+    },
+    {
+      "lane": "tracking",
+      "exit_code": 0,
+      "command": [
+        "C:/Projects/MedMLOps\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.check_tracking"
+      ]
+    },
+    {
+      "lane": "end-to-end",
+      "exit_code": 0,
+      "command": [
+        "C:/Projects/MedMLOps\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.validate_phase4"
+      ]
+    },
+    {
+      "lane": "dependency-audit",
+      "exit_code": 1,
+      "command": [
+        "C:/Projects/MedMLOps\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip_audit",
+        "--cache-dir",
+        "runtime/pip-audit-cache",
+        "--format",
+        "json",
+        "--output",
+        "runtime\\phase5-execution\\dependency-audit.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# UNLOCKED target stack. Do not treat this as a verified dependency lock.
+# Resolve with pip --dry-run --report, then lock after clean install and tests.
+numpy>=2.2,<3
+pandas>=2.3,<3
+scikit-learn>=1.7,<2
+fastapi>=0.115,<1
+pydantic>=2.12,<3
+uvicorn>=0.34,<1
+mlflow>=3,<4
+dvc>=3,<4
+evidently>=0.7,<1
+psycopg[binary]>=3.2,<4
+prometheus-client>=0.22,<1
+pytest>=8,<10
+ruff>=0.11,<1
+mypy>=1.15,<2
+pip-audit>=2.9,<3
+httpx>=0.28,<1
+psycopg2-binary>=2.9,<3

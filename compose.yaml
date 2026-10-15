@@ -1,0 +1,113 @@
+name: medmlops
+services:
+  volume-init:
+    image: medmlops:phase4
+    user: "0:0"
+    command: [python, -c, "import os; os.chown('/app/runtime/mlartifacts',10001,10001); os.chown('/app/runtime/serving',10001,10001)"]
+    volumes:
+      - mlflow-artifacts:/app/runtime/mlartifacts
+      - serving-cache:/app/runtime/serving
+  postgres:
+    image: postgres:16.13-alpine
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/bootstrap_local.py}
+      MLFLOW_DB_PASSWORD: ${MLFLOW_DB_PASSWORD:?Run scripts/bootstrap_local.py}
+      GOVERNANCE_DB_PASSWORD: ${GOVERNANCE_DB_PASSWORD:?Run scripts/bootstrap_local.py}
+    ports: ["127.0.0.1:5433:5432"]
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./infrastructure/postgres/init.sh:/docker-entrypoint-initdb.d/01-init.sh:ro
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  api:
+    image: medmlops:phase4
+    build: .
+    environment:
+      MEDMLOPS_API_TOKEN: ${MEDMLOPS_API_TOKEN:?Run bootstrap}
+      SERVING_DB_PASSWORD: ${SERVING_DB_PASSWORD:?Run bootstrap}
+      MEDMLOPS_DB_ROLE: serving
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["serving-cache:/app/runtime/serving"]
+    depends_on:
+      mlflow: {condition: service_healthy}
+      migrate: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+  prometheus:
+    image: prom/prometheus:v3.15.0
+    ports: ["127.0.0.1:9090:9090"]
+    volumes:
+      - ./infrastructure/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./infrastructure/prometheus/alerts.yml:/etc/prometheus/alerts.yml:ro
+      - prometheus-data:/prometheus
+    healthcheck:
+      test: [CMD, wget, -q, --spider, "http://localhost:9090/-/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+  grafana:
+    image: grafana/grafana:13.2.2
+    ports: ["127.0.0.1:3000:3000"]
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:?Run bootstrap}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./infrastructure/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./infrastructure/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    healthcheck:
+      test: [CMD, wget, -q, --spider, "http://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    restart: unless-stopped
+  mlflow:
+    build: .
+    image: medmlops:phase4
+    command: [python, -m, medmlops.tracking, server]
+    environment:
+      MLFLOW_DB_PASSWORD: ${MLFLOW_DB_PASSWORD:?Run bootstrap}
+    ports: ["127.0.0.1:5000:5000"]
+    volumes: ["mlflow-artifacts:/app/runtime/mlartifacts"]
+    depends_on:
+      postgres: {condition: service_healthy}
+      volume-init: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:5000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+    restart: unless-stopped
+  migrate:
+    image: medmlops:phase4
+    command: [python, -m, scripts.migrate_target]
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run bootstrap}
+      GOVERNANCE_DB_PASSWORD: ${GOVERNANCE_DB_PASSWORD:?Run bootstrap}
+      SERVING_DB_PASSWORD: ${SERVING_DB_PASSWORD:?Run bootstrap}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+    depends_on:
+      postgres: {condition: service_healthy}
+volumes:
+  postgres-data:
+  mlflow-artifacts:
+  serving-cache:
+  prometheus-data:
+  grafana-data:

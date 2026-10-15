@@ -1,0 +1,16 @@
+groups:
+  - name: medmlops
+    rules:
+      - alert: SyntheticDriftDetected
+        expr: medmlops_drift_alert > 0
+        labels: {severity: warning}
+        annotations:
+          summary: Synthetic window drift; investigate without automatic promotion
+      - alert: MedMLOpsApiDown
+        expr: up{job="medmlops"} == 0
+        for: 15s
+        labels: {severity: critical}
+      - alert: MedMLOpsAuditUnavailable
+        expr: medmlops_audit_available == 0
+        for: 15s
+        labels: {severity: critical}

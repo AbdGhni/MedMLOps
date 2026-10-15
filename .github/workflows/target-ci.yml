@@ -1,0 +1,43 @@
+name: target-platform-ci
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+env:
+  MEDMLOPS_EVIDENCE_DIR: runtime/ci-evidence
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-target.lock
+      - run: python -m pip install pip==26.2.1
+      - run: python -m pip install --require-hashes -r requirements-target.lock
+      - run: python -m pip check
+      - run: python -m ruff check medmlops scripts tests
+      - run: python -m pytest -q -p no:cacheprovider
+      - run: python -m mypy --check-untyped-defs --ignore-missing-imports medmlops/settings.py medmlops/governance.py medmlops/tracking.py medmlops/serving.py medmlops/monitoring.py medmlops/pyfunc.py
+      - name: Train clean source before writing evidence
+        run: |
+          mkdir -p runtime
+          python -m medmlops.pipeline all --work runtime/phase4 > runtime/pipeline.txt
+      - run: python -m scripts.bootstrap_local
+      - run: docker compose up --build -d --wait --wait-timeout 240
+      - run: python -m scripts.check_tracking
+      - run: python -m scripts.validate_phase4
+      - run: python -m scripts.check_dvc
+      - name: Security gate (no ignored advisory IDs)
+        run: python -m pip_audit --format json --output runtime/ci-evidence/ci-audit.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: target-platform-evidence
+          path: |
+            runtime/ci-evidence
+            runtime/pipeline.txt
+      - if: always()
+        run: docker compose down

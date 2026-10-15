@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-10-14T21:23:53.149583+00:00",
+  "python": "3.12.4",
+  "checks": {
+    "pip-check": {
+      "exit_code": 0,
+      "command": [
+        "python.exe",
+        "-m",
+        "pip",
+        "check"
+      ]
+    },
+    "tests": {
+      "exit_code": 0,
+      "command": [
+        "python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ]
+    },
+    "lint": {
+      "exit_code": 0,
+      "command": [
+        "python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "medmlops",
+        "scripts",
+        "tests"
+      ]
+    },
+    "typing": {
+      "exit_code": 0,
+      "command": [
+        "python.exe",
+        "-m",
+        "mypy",
+        "--check-untyped-defs",
+        "--ignore-missing-imports",
+        "medmlops/settings.py",
+        "medmlops/governance.py",
+        "medmlops/tracking.py",
+        "medmlops/serving.py",
+        "medmlops/monitoring.py",
+        "medmlops/pyfunc.py"
+      ]
+    }
+  },
+  "versions": {
+    "mlflow": "3.17.1",
+    "dvc": "3.67.1",
+    "fastapi": "0.143.1",
+    "uvicorn": "0.54.0",
+    "evidently": "0.7.23",
+    "psycopg": "3.3.6",
+    "prometheus-client": "0.26.0"
+  },
+  "hashes": {
+    "audit-events.json": "12edb79f87489e170c55963f2cb1124dd037786dbff6129de0a1b34bd194cf09",
+    "dependency-audit.json": "8b463ef6c1b5579cd2da64aec083503ee807cc264e7071ec27e5780fc90bca15",
+    "dvc.json": "af21c706a401c5d54ecaa5a03a379a2ff7fb39606c81ad98060e67c8cc8a0116",
+    "end-to-end.json": "1e077869fce488b5535ee676dc98a2b0e222ac1f81352b66ef9e8aa88144ef64",
+    "tracking.json": "2ae55ee9ecbf67ea0e477e709e2c08b22afd543374b26106333fba1e0c95bda4"
+  },
+  "browser_rendering": "not verified: no enabled computer-use browser surface",
+  "github_actions_execution": "not run; no publication authorized"
+}

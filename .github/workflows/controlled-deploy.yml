@@ -1,0 +1,37 @@
+name: controlled-local-deployment
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Existing MLflow version for explicit approval and deployment
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  deploy:
+    runs-on: [self-hosted, medmlops-local]
+    environment: local-demo
+    timeout-minutes: 15
+    concurrency:
+      group: medmlops-local-deployment
+      cancel-in-progress: false
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install --require-hashes -r requirements-target.lock
+      - run: python -m pip check
+      - name: Security gate before approval
+        run: python -m pip_audit
+      - name: Gate, explicit approval, verified deployment
+        env:
+          VERSION: ${{ inputs.version }}
+          OPERATOR: ${{ github.actor }}
+          MEDMLOPS_API_TOKEN: ${{ secrets.MEDMLOPS_API_TOKEN }}
+          GOVERNANCE_DB_PASSWORD: ${{ secrets.GOVERNANCE_DB_PASSWORD }}
+        run: |
+          python -m medmlops.lifecycle approve --version "$VERSION" --actor "$OPERATOR"
+          python -m medmlops.lifecycle deploy --version "$VERSION" --actor "$OPERATOR"
+# Configure required reviewers for the local-demo GitHub environment before enabling.

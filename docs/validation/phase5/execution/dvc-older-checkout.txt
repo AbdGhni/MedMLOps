@@ -1,0 +1,6 @@
+M       data\candidates\
+M       data\prepared\
+M       data\raw\
+M       data\comparison.json
+M       data\dataset.json
+M       data\validation.json

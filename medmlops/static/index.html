@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MedMLOps · laboratoire MLOps</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#e7edf6;background:#0b1220}body{max-width:1120px;margin:auto;padding:32px}header{display:flex;justify-content:space-between;align-items:center}h1{font-size:38px;margin:0}h2{font-size:20px}.tag{background:#193e46;color:#a4f2df;border-radius:6px;padding:8px}p{line-height:1.6;color:#bdcbe0}.notice{border-left:4px solid #f1c46b;padding:12px;background:#222031}.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.card{background:#141f32;border:1px solid #2c3d55;border-radius:14px;padding:24px;margin-top:24px}label{display:block;margin:12px 0 6px}input,button{font:inherit;padding:12px;box-sizing:border-box;border-radius:7px;border:1px solid #68809f;min-height:44px}input{width:100%;background:#0b1220;color:white}button{background:#a4f2df;color:#10262d;font-weight:600;cursor:pointer;margin-top:16px}button:focus-visible,input:focus-visible{outline:3px solid #f1c46b}pre{white-space:pre-wrap;overflow-wrap:anywhere;color:#cee5fa;font-size:13px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}#message{min-height:24px;color:#f1c46b}table{width:100%;text-align:left;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #34445b}@media(max-width:750px){.grid{grid-template-columns:1fr}header{display:block}.tag{display:inline-block;margin-top:14px}}
+</style></head><body>
+<header><div><h1>MedMLOps</h1><p>De l’expérience au modèle surveillé.</p></div><span class="tag">Laboratoire · données synthétiques</span></header>
+<p class="notice">Démonstrateur technique. Les probabilités décrivent une simulation, sans validité clinique. Aucun usage diagnostic ou thérapeutique.</p>
+<section class="card"><label for="token">Jeton API local (conservé uniquement en mémoire)</label><input id="token" type="password" autocomplete="off"><button id="refresh">Connecter et actualiser</button><p id="message" role="status" aria-live="polite"></p></section>
+<div class="grid"><section class="card"><h2>Inférence traçable</h2><form id="prediction"><div class="fields">
+<div><label for="age">Âge (années)</label><input id="age" type="number" min="18" max="100" value="68" required></div>
+<div><label for="heart_rate">Fréquence cardiaque (/min)</label><input id="heart_rate" type="number" min="40" max="180" value="105" required></div>
+<div><label for="systolic_bp">Pression systolique (mmHg)</label><input id="systolic_bp" type="number" min="70" max="220" value="110" required></div>
+<div><label for="oxygen_saturation">SpO₂ (%)</label><input id="oxygen_saturation" type="number" min="80" max="100" step="0.1" value="94" required></div>
+<div><label for="temperature">Température (°C)</label><input id="temperature" type="number" min="35" max="42" step="0.1" value="38" required></div>
+</div><button type="submit">Exécuter la simulation</button></form><pre id="result" aria-live="polite">En attente d’une simulation.</pre></section>
+<section class="card"><h2>Registre et validation</h2><div id="registry">Connectez le laboratoire pour afficher les résultats.</div></section></div>
+<section class="card"><h2>Journal d’exploitation</h2><p>Versions, latence et agrégats de dérive. Aucune valeur individuelle enregistrée.</p><pre id="audit">Aucun journal chargé.</pre></section>
+<script>
+const el=id=>document.getElementById(id);
+async function api(path,body){const r=await fetch(path,{method:body?'POST':'GET',headers:{Authorization:'Bearer '+el('token').value,'Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{})});const data=await r.json();if(!r.ok)throw Error(data.error||'Échec');return data;}
+async function refresh(){try{const s=await api('/api/status');el('registry').replaceChildren();const title=document.createElement('p');title.textContent='Version active : '+(s.active||'aucune');el('registry').append(title);for(const run of s.runs){const p=document.createElement('pre');p.textContent=JSON.stringify({version:run.version.slice(0,12),validation:run.report.passed?'PASS':'REJET',auc:run.report.test.auc,sensibilite:run.report.test.sensitivity,specificite:run.report.test.specificity,intervalle_auc:run.report.auc_bootstrap_95_ci},null,2);el('registry').append(p);}el('audit').textContent=JSON.stringify(s.audit.slice(0,8),null,2);el('message').textContent='Laboratoire connecté.';}catch(e){el('message').textContent=e.message;}}
+el('refresh').onclick=refresh;
+el('prediction').onsubmit=async e=>{e.preventDefault();try{const record={};for(const id of ['age','heart_rate','systolic_bp','oxygen_saturation','temperature'])record[id]=Number(el(id).value);const r=await api('/api/predict',{records:[record]});el('result').textContent=JSON.stringify(r,null,2);await refresh();}catch(err){el('result').textContent=err.message;}};
+</script></body></html>

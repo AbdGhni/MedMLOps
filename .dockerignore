@@ -1,0 +1,11 @@
+.git
+.venv
+runtime
+__pycache__
+*.zip
+docs
+tests
+.env
+data
+.dvc
+artifacts

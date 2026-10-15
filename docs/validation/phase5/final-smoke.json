@@ -1,0 +1,18 @@
+{
+  "statuses": {
+    "api_health": 200,
+    "swagger": 200,
+    "mlflow": 200,
+    "grafana": 200,
+    "prometheus": 200
+  },
+  "model": {
+    "version": "10",
+    "model_sha256": "fd22fd94e0ceafaa471b1755c8916cad56ae3e7944481adc72b2360df3a4430c",
+    "dataset_version": "e484b55443e8864257b6ca6e1a1e9ddd2c00d9ea8ca0ad6ffa40c18568c08228",
+    "schema": "synthetic-event-v2",
+    "kind": "logistic",
+    "clinical_validity": false
+  },
+  "swagger_bearer_scheme": true
+}

@@ -1,0 +1,202 @@
+{
+  "uid": "medmlops-v2",
+  "title": "MedMLOps synthetic platform",
+  "schemaVersion": 41,
+  "version": 1,
+  "refresh": "5s",
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "Request throughput",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "medmlops-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(medmlops_requests_total[1m]))"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 8,
+        "h": 8
+      }
+    },
+    {
+      "id": 2,
+      "title": "Error ratio",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "medmlops-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(medmlops_requests_total{status=~\"5..\"}[1m])) / clamp_min(sum(rate(medmlops_requests_total[1m])), 0.001)"
+        }
+      ],
+      "gridPos": {
+        "x": 8,
+        "y": 0,
+        "w": 8,
+        "h": 8
+      }
+    },
+    {
+      "id": 3,
+      "title": "Latency p50",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "medmlops-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.50, sum by (le) (rate(medmlops_request_seconds_bucket[1m])))"
+        }
+      ],
+      "gridPos": {
+        "x": 16,
+        "y": 0,
+        "w": 8,
+        "h": 8
+      }
+    },
+    {
+      "id": 4,
+      "title": "Latency p95",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "medmlops-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.95, sum by (le) (rate(medmlops_request_seconds_bucket[1m])))"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 8,
+        "h": 8
+      }
+    },
+    {
+      "id": 5,
+      "title": "Latency p99",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "medmlops-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.99, sum by (le) (rate(medmlops_request_seconds_bucket[1m])))"
+        }
+      ],
+      "gridPos": {
+        "x": 8,
+        "y": 8,
+        "w": 8,
+        "h": 8
+      }
+    },
+    {
+      "id": 6,
+      "title": "Approved served version",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "medmlops-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "medmlops_model_info"
+        }
+      ],
+      "gridPos": {
+        "x": 16,
+        "y": 8,
+        "w": 8,
+        "h": 8
+      }
+    },
+    {
+      "id": 7,
+      "title": "Lifecycle and rollback audit",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "medmlops-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "medmlops_lifecycle_events"
+        }
+      ],
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 8,
+        "h": 8
+      }
+    },
+    {
+      "id": 8,
+      "title": "Drift incidents",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "medmlops-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "medmlops_drift_alert"
+        }
+      ],
+      "gridPos": {
+        "x": 8,
+        "y": 16,
+        "w": 8,
+        "h": 8
+      }
+    },
+    {
+      "id": 9,
+      "title": "Governance availability",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "medmlops-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "medmlops_audit_available"
+        }
+      ],
+      "gridPos": {
+        "x": 16,
+        "y": 16,
+        "w": 8,
+        "h": 8
+      }
+    }
+  ]
+}
