@@ -1,0 +1,98 @@
+{
+  "tested_public_commit": "1bbdc3112f462fa9182d0f39c51a527e823845ef",
+  "isolated_hash_locked_environment": true,
+  "checks": [
+    {
+      "check": "pip-check",
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-m",
+        "pip",
+        "check"
+      ]
+    },
+    {
+      "check": "lint",
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "medmlops",
+        "scripts",
+        "tests"
+      ]
+    },
+    {
+      "check": "typing",
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-m",
+        "mypy",
+        "--check-untyped-defs",
+        "--ignore-missing-imports",
+        "medmlops/settings.py",
+        "medmlops/governance.py",
+        "medmlops/tracking.py",
+        "medmlops/serving.py",
+        "medmlops/monitoring.py",
+        "medmlops/pyfunc.py"
+      ]
+    },
+    {
+      "check": "pytest",
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ]
+    },
+    {
+      "check": "pipeline",
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-m",
+        "medmlops.pipeline",
+        "all",
+        "--work",
+        "runtime/public-validation"
+      ]
+    },
+    {
+      "check": "privacy",
+      "exit_code": 0,
+      "command": [
+        "python",
+        "-m",
+        "scripts.audit_publication",
+        "--private-denylist",
+        ".publication-local/forbidden-values.json"
+      ]
+    }
+  ],
+  "pytest_passed": 30,
+  "pytest_warning": "Starlette httpx deprecation",
+  "pipeline_clean_provenance": true,
+  "selected": "logistic",
+  "models": {
+    "forest": {
+      "model_sha256": "c52eeb7aaaaa8c5024a333ec1ca0e8b27c1ca858900eb8c016534c4009541943",
+      "test_auc": 0.8376998013808759
+    },
+    "logistic": {
+      "model_sha256": "fd22fd94e0ceafaa471b1755c8916cad56ae3e7944481adc72b2360df3a4430c",
+      "test_auc": 0.8669803587754973
+    }
+  },
+  "local_docker_integration_rerun": false,
+  "reason": "Avoid changing the original local stack; hosted CI verifies an isolated service stack.",
+  "clinical_validity": false
+}

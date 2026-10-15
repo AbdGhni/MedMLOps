@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "current_files_scanned": 203,
+  "reachable_commits_scanned": 1,
+  "reachable_history_blobs_scanned": 189,
+  "tags_scanned": 1,
+  "private_denylist_used": true,
+  "findings": [],
+  "limits": "Known private denylist, selected credential signatures and personal paths. Third-party license attribution retained. Not a universal secret/PII detector."
+}

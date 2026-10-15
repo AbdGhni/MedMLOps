@@ -34,3 +34,13 @@ No deployment workflow will be manually triggered for this publication.
 No authentic browser captures are asserted. Use ../portfolio/DEMO_SCRIPT.md for
 the local URLs and exact capture checklist; inspect interfaces locally and keep
 tokens/passwords out of screenshots. Services must remain loopback-only.
+
+## Local public-copy validation
+
+The independent hash-locked environment passed 30 tests, Ruff, scoped Mypy,
+pip consistency and the synthetic pipeline on clean public source. See
+[LOCAL_VALIDATION.json](LOCAL_VALIDATION.json) and [PRIVACY_AUDIT.json](PRIVACY_AUDIT.json).
+Local Docker integration was deliberately not rerun against the original stack;
+the hosted target workflow provides an isolated environment for that check.
+The RC tag identifies the sanitized, tested source commit. Later main commits
+may add publication evidence and CI fixes; the original private RC is unchanged.
